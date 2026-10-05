@@ -18,6 +18,19 @@ import { useLocale, useTranslations } from "next-intl";
 
 esriConfig.apiKey = process.env.NEXT_PUBLIC_ARCGIS_API_KEY ?? "";
 
+// WebMap logs load failures internally via its own Logger, independent of
+// any .catch() on our own view.when() call above. In dev, React Strict
+// Mode's intentional double-invoke of this component's effect aborts the
+// first WebMap's in-flight load() — harmless, but @arcgis/core still logs
+// it as an error. Suppress only that specific, expected cancellation;
+// genuine load failures (any other error) still log normally.
+esriConfig.log.interceptors.push((level, module, ...args) => {
+  const isAbortedLoad = args.some(
+    (a) => a && typeof a === "object" && "name" in a && (a as { name: unknown }).name === "AbortError"
+  );
+  return level === "error" && isAbortedLoad;
+});
+
 export interface MapPoint {
   id: string | number;
   x: number;
