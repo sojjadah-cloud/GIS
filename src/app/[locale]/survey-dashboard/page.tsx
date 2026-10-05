@@ -242,6 +242,7 @@ export default function SurveyDashboardPage() {
             webmapId={WEBMAP_BOWSHER_ID}
             heightClassName="h-full"
             basemap={basemap}
+            defaultVisibleLayerTitles={[]}
             points={mapPoints}
             selectedPointId={selectedId}
             focusPoint={focusPoint}

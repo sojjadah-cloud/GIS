@@ -43,6 +43,8 @@ import {
   BUILDING_RISK_FEATURE_SERVICE_URL,
   BUILDING_RISK_LAYER_ID,
   WEBMAP_BOWSHER_ID,
+  DEFAULT_MAP_CENTER,
+  DEFAULT_MAP_ZOOM,
 } from "@/config/gis";
 import { riskLevelDomain, landUseDomain, domainLabel, domainColor } from "@/config/domains";
 import { formatNumber, cn } from "@/lib/utils";
@@ -217,6 +219,9 @@ export default function FloodRiskPage() {
             webmapId={WEBMAP_BOWSHER_ID}
             heightClassName="h-full"
             basemap={basemap}
+            initialCenter={DEFAULT_MAP_CENTER}
+            initialZoom={DEFAULT_MAP_ZOOM}
+            defaultVisibleLayerTitles={["Plot_risk_s8_Vector", "Stream_7", "Stream_8"]}
             onViewStatus={setViewStatus}
             onLayersReady={setLayers}
             legendContainerRef={legendContainerRef}

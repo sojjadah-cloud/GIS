@@ -15,6 +15,7 @@ import type Graphic_t from "@arcgis/core/Graphic";
 import type Layer from "@arcgis/core/layers/Layer";
 import { Loader2, RotateCw } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { LAYER_MIN_SCALE_CAPS } from "@/config/layer-performance";
 
 esriConfig.apiKey = process.env.NEXT_PUBLIC_ARCGIS_API_KEY ?? "";
 
@@ -80,6 +81,19 @@ export interface ArcgisMapViewProps {
   selectedPointId?: string | number | null;
   /** Titles of real web map layers to hit-test on click (e.g. a plot layer), in addition to the points layer. */
   identifyLayerTitles?: string[];
+  /**
+   * If provided, only these web map operational layer titles start visible;
+   * every other operational layer in the web map starts hidden (still
+   * listed in the Layer Manager, just not rendered until toggled on). Keeps
+   * pages that don't need the heavier authored layers (e.g. the Survey
+   * Dashboard doesn't need the 35k-feature plot layer) fast by default.
+   */
+  defaultVisibleLayerTitles?: string[];
+  /** Starting camera, used instead of the web map's own saved (often much
+   * wider) default extent. Ignored once `points` are provided, since those
+   * auto-fit the view instead. */
+  initialCenter?: [number, number];
+  initialZoom?: number;
 }
 
 export const ArcgisMapView = forwardRef<ArcgisMapViewHandle, ArcgisMapViewProps>(function ArcgisMapView(
@@ -98,6 +112,9 @@ export const ArcgisMapView = forwardRef<ArcgisMapViewHandle, ArcgisMapViewProps>
     pointsLayerTitle = "Survey Reports",
     selectedPointId,
     identifyLayerTitles,
+    defaultVisibleLayerTitles,
+    initialCenter,
+    initialZoom,
   },
   ref
 ) {
@@ -132,6 +149,7 @@ export const ArcgisMapView = forwardRef<ArcgisMapViewHandle, ArcgisMapViewProps>
       map: webmap,
       popupEnabled: false,
       ui: { components: [] },
+      ...(initialCenter ? { center: initialCenter, zoom: initialZoom ?? 13 } : {}),
     });
     viewRef.current = view;
 
@@ -142,6 +160,19 @@ export const ArcgisMapView = forwardRef<ArcgisMapViewHandle, ArcgisMapViewProps>
 
         if (legendContainerRef?.current) {
           legendRef.current = new Legend({ view, container: legendContainerRef.current });
+        }
+
+        // Cap known-heavy layers to a scale where their feature count is
+        // reasonable, and apply this page's default visibility allowlist
+        // (if given) before anything renders.
+        for (const layer of webmap.layers.toArray() as Layer[]) {
+          const title = layer.title ?? "";
+          if (title in LAYER_MIN_SCALE_CAPS && "minScale" in layer) {
+            (layer as Layer & { minScale: number }).minScale = LAYER_MIN_SCALE_CAPS[title];
+          }
+          if (defaultVisibleLayerTitles && title !== pointsLayerTitle) {
+            layer.visible = defaultVisibleLayerTitles.includes(title);
+          }
         }
 
         if (identifyLayerTitles && identifyLayerTitles.length > 0) {

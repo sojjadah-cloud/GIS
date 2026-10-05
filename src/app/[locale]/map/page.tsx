@@ -30,6 +30,7 @@ import {
   PLOT_PLAN_FEATURE_SERVICE_URL,
   PLOT_PLAN_LAYER_ID,
   PLOT_PLAN_SEARCH_FIELD,
+  DEFAULT_MAP_CENTER,
 } from "@/config/gis";
 import { queryFeatures, geometryCentroid } from "@/services/arcgis/query";
 import { landUseDomain, domainLabel } from "@/config/domains";
@@ -137,6 +138,9 @@ export default function MapPage() {
             heightClassName="h-full"
             basemap={basemap}
             focusPoint={focusPoint}
+            initialCenter={DEFAULT_MAP_CENTER}
+            initialZoom={15}
+            defaultVisibleLayerTitles={[PLOT_LAYER_TITLE, "Bawsher_Roads_2026", "Stream_7", "Stream_8"]}
             identifyLayerTitles={[PLOT_LAYER_TITLE]}
             onViewStatus={setViewStatus}
             onLayersReady={setLayers}
