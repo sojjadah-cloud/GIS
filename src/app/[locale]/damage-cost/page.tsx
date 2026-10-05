@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
-import { Card, CardBody } from "@/components/ui/card";
 import { Banknote, Building2, TrendingDown, ShieldCheck } from "lucide-react";
+import { KpiCard } from "@/components/dashboard/kpi-card";
 
 export default function DamageCostPage() {
   const t = useTranslations("damageCost");
@@ -12,28 +12,13 @@ export default function DamageCostPage() {
     { label: t("stat4Label"), value: t("stat4Value"), icon: ShieldCheck, tone: "success" as const },
   ];
 
-  const toneClasses = {
-    danger: "bg-[var(--danger-soft)] text-[var(--danger)]",
-    info: "bg-[var(--info-soft)] text-[var(--info)]",
-    warning: "bg-[var(--warning-soft)] text-[var(--warning)]",
-    success: "bg-[var(--success-soft)] text-[var(--success)]",
-  };
-
   return (
     <div className="mx-auto max-w-[1100px] px-4 py-14 lg:px-8">
       <h1 className="mb-10 text-3xl font-bold text-[var(--text-primary)] sm:text-4xl">{t("title")}</h1>
 
       <div className="mb-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
         {stats.map((s) => (
-          <Card key={s.label}>
-            <CardBody>
-              <span className={`mb-3 flex h-9 w-9 items-center justify-center rounded-[var(--radius-sm)] ${toneClasses[s.tone]}`}>
-                <s.icon className="h-4 w-4" />
-              </span>
-              <p className="mb-1 text-xl font-bold text-[var(--text-primary)] sm:text-2xl">{s.value}</p>
-              <p className="text-xs leading-snug text-[var(--text-secondary)]">{s.label}</p>
-            </CardBody>
-          </Card>
+          <KpiCard key={s.label} label={s.label} value={s.value} icon={s.icon} tone={s.tone} />
         ))}
       </div>
 

@@ -13,8 +13,13 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-[var(--border)] bg-[radial-gradient(ellipse_at_top,var(--primary-soft),transparent_60%)]">
-        <div className="mx-auto max-w-[1600px] px-4 py-16 sm:py-20 lg:px-8 lg:py-28">
+      <section className="relative overflow-hidden border-b border-[var(--border)] bg-[var(--surface)]">
+        <div
+          className="absolute inset-0 opacity-[0.35] [background-image:radial-gradient(var(--border-strong)_1px,transparent_1px)] [background-size:24px_24px] [mask-image:linear-gradient(to_bottom,black,transparent)]"
+          aria-hidden
+        />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--primary)] to-transparent" aria-hidden />
+        <div className="relative mx-auto max-w-[1600px] px-4 py-16 sm:py-20 lg:px-8 lg:py-28">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-[var(--primary)]">
             {t("heroSubtitle")}
           </p>
