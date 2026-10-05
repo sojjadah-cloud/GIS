@@ -70,7 +70,7 @@ export default function MapPage() {
         </p>
       )}
       <div className="flex-1">
-        <MapView webmapId={WEBMAP_BOWSHER_ID} heightClassName="h-full" focusPoint={focusPoint} showLocate />
+        <MapView webmapId={WEBMAP_BOWSHER_ID} heightClassName="h-full" focusPoint={focusPoint} />
       </div>
     </div>
   );

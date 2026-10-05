@@ -3,6 +3,31 @@
     "siteName": "WadiWise",
     "siteTagline": "When Cities Learn from Wadis"
   },
+  "gis": {
+    "layers": "Layers",
+    "legend": "Legend",
+    "basemap": "Basemap",
+    "analyzeVisibleExtent": "Analyze visible extent",
+    "overview": "Overview",
+    "insights": "Insights",
+    "details": "Details",
+    "light": "Light",
+    "dark": "Dark",
+    "satellite": "Satellite",
+    "terrain": "Terrain",
+    "features": "features",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "goHome": "Zoom to data",
+    "noInsights": "Not enough data yet for insights.",
+    "noLayers": "No layers available.",
+    "noSelection": "No feature selected",
+    "noSelectionHint": "Select a point on the map or a record below to inspect it.",
+    "records": "Records",
+    "studyArea": "Study area",
+    "fullscreenMap": "Fullscreen map",
+    "exitFullscreenMap": "Exit fullscreen"
+  },
   "nav": {
     "home": "Home",
     "map": "Wadi Al-Ansab Map",
@@ -121,6 +146,8 @@
       "High and Very High areas require priority attention.",
       "Always validate results with ground surveys before action planning."
     ],
+    "plots": "Plots",
+    "buildings": "Buildings",
     "plotsAtRisk": "Total Plots at Risk",
     "buildingsAtRisk": "Total Buildings at Risk",
     "safePlots": "Safe Plots",
@@ -129,7 +156,11 @@
     "buildingRiskDistribution": "Flood Risk Distribution of Buildings",
     "priorityTable": "High-Priority Land Use (Very High + High Risk)",
     "landuse": "Land Use",
-    "riskLevel": "Risk Level"
+    "riskLevel": "Risk Level",
+    "insightPlotsAtRisk": "{share} of surveyed plots ({count} of {total}) fall within a flood-risk classification (Low to Very High).",
+    "insightBuildingsAtRisk": "{share} of surveyed buildings ({count} of {total}) fall within a flood-risk classification.",
+    "insightTopLandUse": "{value} land use accounts for the largest share of high- and very-high-risk plots, with {count} plots.",
+    "insightRiskComparison": "{higher} show a higher at-risk share ({higherShare}) than {lower} ({lowerShare})."
   },
   "surveyDashboard": {
     "title": "Property Damage Assessment Survey",
@@ -150,7 +181,15 @@
     "responseRating": "Response Rating",
     "notes": "Notes",
     "noNotes": "No additional notes submitted.",
-    "selectFeatureHint": "Select a point on the map or a table row to view full incident details."
+    "selectFeatureHint": "Select a point on the map or a table row to view full incident details.",
+    "insightTopDamage": "{value} is the most frequently reported damage level, accounting for {share} of reports ({count} of 6).",
+    "insightTopBuilding": "{value} buildings make up {share} of all reported incidents.",
+    "insightTopResidence": "{share} of respondents had lived in their residence for {value}.",
+    "insightDisplacement": "{count} of {total} respondents ({share}) reported displacement from their home.",
+    "insightSupport": "{count} of {total} respondents ({share}) requested government support.",
+    "insightTopDamageType": "{value} was cited in {count} reports, the most common damage type.",
+    "analyzeExtentOn": "Showing data within the current map view.",
+    "analyzeExtentOff": "Showing all reports regardless of map position."
   },
   "recommended": {
     "title": "Stop Flooding by Thinking Like a Sponge",

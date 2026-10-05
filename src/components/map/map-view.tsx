@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { Loader2 } from "lucide-react";
-import type { ArcgisMapViewProps } from "./arcgis-map-view";
+import type { ArcgisMapViewProps, ArcgisMapViewHandle } from "./arcgis-map-view";
 
 function MapLoadingFallback() {
   return (
@@ -14,7 +14,9 @@ function MapLoadingFallback() {
 
 // @arcgis/core touches `window` during MapView construction, so it must only
 // ever run in the browser.
-export const MapView = dynamic<ArcgisMapViewProps>(
+export const MapView = dynamic<ArcgisMapViewProps & { ref?: React.Ref<ArcgisMapViewHandle> }>(
   () => import("./arcgis-map-view").then((m) => m.ArcgisMapView),
   { ssr: false, loading: MapLoadingFallback }
 );
+
+export type { ArcgisMapViewHandle, MapPoint, ManagedLayer, MapViewStatus, BasemapId } from "./arcgis-map-view";
