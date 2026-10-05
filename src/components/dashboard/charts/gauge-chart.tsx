@@ -1,7 +1,7 @@
 "use client";
 
 import ReactECharts from "echarts-for-react";
-import { useChartColors } from "@/lib/chart-theme";
+import { useChartColors, useChartFontFamily } from "@/lib/chart-theme";
 
 export function GaugeChart({
   value,
@@ -16,6 +16,7 @@ export function GaugeChart({
   color?: "success" | "warning" | "danger";
 }) {
   const colors = useChartColors();
+  const fontFamily = useChartFontFamily();
   const ratio = max > 0 ? value / max : 0;
   const resolvedColor =
     color === "success"
@@ -31,6 +32,7 @@ export function GaugeChart({
               : colors.danger;
 
   const option = {
+    textStyle: { fontFamily },
     series: [
       {
         type: "gauge",

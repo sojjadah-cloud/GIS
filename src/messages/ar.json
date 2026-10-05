@@ -26,6 +26,8 @@
     "records": "السجلات",
     "studyArea": "منطقة الدراسة",
     "fullscreenMap": "ملء الشاشة",
+    "mapLoadError": "طبقة الخريطة غير متاحة مؤقتًا.",
+    "retry": "إعادة المحاولة",
     "exitFullscreenMap": "الخروج من ملء الشاشة"
   },
   "nav": {

@@ -26,6 +26,8 @@
     "records": "Records",
     "studyArea": "Study area",
     "fullscreenMap": "Fullscreen map",
+    "mapLoadError": "The map layer is temporarily unavailable.",
+    "retry": "Retry",
     "exitFullscreenMap": "Exit fullscreen"
   },
   "nav": {

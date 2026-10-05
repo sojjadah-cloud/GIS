@@ -13,7 +13,7 @@ export default function SurveyPage() {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="flex h-[calc(100dvh-4rem-57px)] flex-col lg:h-[calc(100dvh-4rem-45px)]">
+    <div className="flex h-[calc(100dvh-4rem)] flex-col">
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--border)] px-4 py-4 lg:px-6">
         <div className="min-w-0">
           <h1 className="truncate text-xl font-semibold text-[var(--text-primary)]">{t("title")}</h1>

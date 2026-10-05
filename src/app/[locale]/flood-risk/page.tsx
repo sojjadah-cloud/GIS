@@ -257,7 +257,7 @@ export default function FloodRiskPage() {
             </button>
           </div>
 
-          <MapStatusBar status={viewStatus} featureLabel={gis("features")} locale={locale} showFeatureCount={false} />
+          <MapStatusBar status={viewStatus} featureLabel={gis("features")} showFeatureCount={false} />
 
           <MobileAnalysisDrawer
             tabs={analysisTabs}

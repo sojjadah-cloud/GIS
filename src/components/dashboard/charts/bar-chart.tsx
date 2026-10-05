@@ -1,8 +1,7 @@
 "use client";
 
 import ReactECharts from "echarts-for-react";
-import { useChartColors, colorForVar } from "@/lib/chart-theme";
-import { useLocale } from "next-intl";
+import { useChartColors, useChartFontFamily, colorForVar } from "@/lib/chart-theme";
 
 export interface BarDatum {
   name: string;
@@ -22,8 +21,7 @@ export function BarChart({
   valueLabel?: string;
 }) {
   const colors = useChartColors();
-  const locale = useLocale();
-  const isRtl = locale === "ar";
+  const fontFamily = useChartFontFamily();
 
   const categoryAxis = {
     type: "category" as const,
@@ -42,7 +40,7 @@ export function BarChart({
   };
 
   const option = {
-    textStyle: { fontFamily: isRtl ? "var(--font-sans-ar)" : "var(--font-sans-en)" },
+    textStyle: { fontFamily },
     grid: { left: horizontal ? 8 : 8, right: 16, top: 16, bottom: horizontal ? 8 : 32, containLabel: true },
     tooltip: {
       trigger: "item",

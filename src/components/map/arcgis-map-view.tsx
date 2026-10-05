@@ -10,9 +10,10 @@ import GraphicsLayer from "@arcgis/core/layers/GraphicsLayer";
 import Point from "@arcgis/core/geometry/Point";
 import Legend from "@arcgis/core/widgets/Legend";
 import Extent from "@arcgis/core/geometry/Extent";
+import * as reactiveUtils from "@arcgis/core/core/reactiveUtils";
 import type Graphic_t from "@arcgis/core/Graphic";
 import type Layer from "@arcgis/core/layers/Layer";
-import { Loader2 } from "lucide-react";
+import { Loader2, RotateCw } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 esriConfig.apiKey = process.env.NEXT_PUBLIC_ARCGIS_API_KEY ?? "";
@@ -95,12 +96,18 @@ export const ArcgisMapView = forwardRef<ArcgisMapViewHandle, ArcgisMapViewProps>
   const didFitPointsRef = useRef(false);
   const identifyLayersRef = useRef<Layer[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [retryKey, setRetryKey] = useState(0);
   const locale = useLocale();
   const t = useTranslations("common");
+  const gis = useTranslations("gis");
 
   useEffect(() => {
     if (!containerRef.current) return;
     let cancelled = false;
+
+    setLoading(true);
+    setError(false);
 
     const webmap = new WebMap({ portalItem: { id: webmapId } });
     const pointsLayer = new GraphicsLayer({ title: pointsLayerTitle });
@@ -115,44 +122,57 @@ export const ArcgisMapView = forwardRef<ArcgisMapViewHandle, ArcgisMapViewProps>
     });
     viewRef.current = view;
 
-    view.when(() => {
-      if (cancelled) return;
-      setLoading(false);
+    view.when(
+      () => {
+        if (cancelled) return;
+        setLoading(false);
 
-      if (legendContainerRef?.current) {
-        legendRef.current = new Legend({ view, container: legendContainerRef.current });
-      }
+        if (legendContainerRef?.current) {
+          legendRef.current = new Legend({ view, container: legendContainerRef.current });
+        }
 
-      if (identifyLayerTitles && identifyLayerTitles.length > 0) {
-        identifyLayersRef.current = webmap.layers
-          .toArray()
-          .filter((l: Layer) => identifyLayerTitles.includes(l.title ?? ""));
-      }
+        if (identifyLayerTitles && identifyLayerTitles.length > 0) {
+          identifyLayersRef.current = webmap.layers
+            .toArray()
+            .filter((l: Layer) => identifyLayerTitles.includes(l.title ?? ""));
+        }
 
-      if (onLayersReady) {
-        const managed: ManagedLayer[] = webmap.layers.toArray().map((layer: Layer) => ({
-          id: layer.id,
-          title: layer.title || layer.id,
-          visible: layer.visible,
-          setVisible: (v: boolean) => {
-            layer.visible = v;
-          },
-        }));
-        onLayersReady(managed);
+        if (onLayersReady) {
+          const managed: ManagedLayer[] = webmap.layers.toArray().map((layer: Layer) => ({
+            id: layer.id,
+            title: layer.title || layer.id,
+            visible: layer.visible,
+            setVisible: (v: boolean) => {
+              layer.visible = v;
+            },
+          }));
+          onLayersReady(managed);
+        }
+      },
+      (err: Error) => {
+        // Expected on unmount / Fast Refresh remount — the in-flight load is
+        // intentionally aborted, not a real failure.
+        if (cancelled || err?.name === "AbortError") return;
+        setLoading(false);
+        setError(true);
       }
-    });
+    );
 
     if (onFeatureClick) {
       view.on("click", async (event) => {
-        const include = [pointsLayer, ...identifyLayersRef.current];
-        const response = await view.hitTest(event, { include });
-        const graphicHit = response.results.find(
-          (r): r is __esri.GraphicHit => "graphic" in r && !!r.graphic.attributes
-        );
-        onFeatureClick(
-          graphicHit ? graphicHit.graphic.attributes : null,
-          graphicHit?.graphic.layer?.title ?? undefined
-        );
+        try {
+          const include = [pointsLayer, ...identifyLayersRef.current];
+          const response = await view.hitTest(event, { include });
+          const graphicHit = response.results.find(
+            (r): r is __esri.GraphicHit => "graphic" in r && !!r.graphic.attributes
+          );
+          onFeatureClick(
+            graphicHit ? graphicHit.graphic.attributes : null,
+            graphicHit?.graphic.layer?.title ?? undefined
+          );
+        } catch {
+          // View was destroyed mid-hitTest (e.g. fast navigation) — ignore.
+        }
       });
     }
 
@@ -178,14 +198,17 @@ export const ArcgisMapView = forwardRef<ArcgisMapViewHandle, ArcgisMapViewProps>
       });
     };
 
-    const handle = view.watch("stationary", (stationary: boolean) => {
-      if (!stationary) return;
-      clearTimeout(statusTimer);
-      statusTimer = setTimeout(() => {
-        reportStatus();
-        onExtentChange?.(view.extent ?? null);
-      }, 150);
-    });
+    const handle = reactiveUtils.watch(
+      () => view.stationary,
+      (stationary: boolean) => {
+        if (!stationary) return;
+        clearTimeout(statusTimer);
+        statusTimer = setTimeout(() => {
+          reportStatus();
+          onExtentChange?.(view.extent ?? null);
+        }, 150);
+      }
+    );
 
     return () => {
       cancelled = true;
@@ -195,7 +218,7 @@ export const ArcgisMapView = forwardRef<ArcgisMapViewHandle, ArcgisMapViewProps>
       view.destroy();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [webmapId]);
+  }, [webmapId, retryKey]);
 
   // Basemap switching.
   useEffect(() => {
@@ -301,10 +324,22 @@ export const ArcgisMapView = forwardRef<ArcgisMapViewHandle, ArcgisMapViewProps>
         lang={locale}
         onKeyDown={onContainerKeyDown}
       />
-      {loading && (
+      {loading && !error && (
         <div className="absolute inset-0 flex items-center justify-center bg-[var(--surface-secondary)]">
           <Loader2 className="h-6 w-6 animate-spin text-[var(--primary)]" aria-hidden />
           <span className="sr-only">{t("loadingMap")}</span>
+        </div>
+      )}
+      {error && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[var(--surface-secondary)] p-6 text-center">
+          <p className="text-sm text-[var(--text-secondary)]">{gis("mapLoadError")}</p>
+          <button
+            onClick={() => setRetryKey((k) => k + 1)}
+            className="flex items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--border-strong)] bg-[var(--surface)] px-3 py-1.5 text-sm font-medium text-[var(--text-primary)] hover:bg-[var(--surface-secondary)]"
+          >
+            <RotateCw className="h-3.5 w-3.5" />
+            {gis("retry")}
+          </button>
         </div>
       )}
     </div>

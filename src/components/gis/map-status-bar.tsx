@@ -4,17 +4,17 @@ import { formatNumber } from "@/lib/utils";
 export function MapStatusBar({
   status,
   featureLabel,
-  locale,
   showFeatureCount = true,
 }: {
   status: MapViewStatus | null;
   featureLabel: string;
-  locale: string;
   showFeatureCount?: boolean;
 }) {
   if (!status) return null;
 
-  const scaleLabel = `1:${formatNumber(status.scale, locale)}`;
+  // GIS convention: scale ratios, coordinates and feature counts in a status
+  // bar stay in Western numerals regardless of UI language.
+  const scaleLabel = `1:${formatNumber(status.scale, "en")}`;
   const coordLabel = status.center
     ? `${status.center.lat.toFixed(4)}°, ${status.center.lon.toFixed(4)}°`
     : "—";
@@ -31,7 +31,7 @@ export function MapStatusBar({
         <>
           <span className="h-3 w-px bg-[var(--border)]" aria-hidden />
           <span className="font-medium text-[var(--text-primary)] tabular-nums">
-            {formatNumber(status.visiblePointCount, locale)} {featureLabel}
+            {formatNumber(status.visiblePointCount, "en")} {featureLabel}
           </span>
         </>
       )}

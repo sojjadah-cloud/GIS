@@ -41,7 +41,7 @@
   --radius-pill: 999px;
 
   --font-sans-en: var(--font-inter), "Inter", system-ui, sans-serif;
-  --font-sans-ar: var(--font-tajawal), "Tajawal", system-ui, sans-serif;
+  --font-sans-ar: var(--font-arabic), "IBM Plex Sans Arabic", system-ui, sans-serif;
 }
 
 :root[data-theme="dark"] {

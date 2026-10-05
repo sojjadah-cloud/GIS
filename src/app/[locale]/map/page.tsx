@@ -202,7 +202,7 @@ export default function MapPage() {
             </button>
           </div>
 
-          <MapStatusBar status={viewStatus} featureLabel={gis("features")} locale={locale} showFeatureCount={false} />
+          <MapStatusBar status={viewStatus} featureLabel={gis("features")} showFeatureCount={false} />
 
           <MobileAnalysisDrawer
             tabs={[{ id: "details", label: t("plotDetails") }]}

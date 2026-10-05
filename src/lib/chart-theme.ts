@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLocale } from "next-intl";
 import { useUIStore } from "@/store/ui-store";
 
 export interface ChartColors {
@@ -59,6 +60,24 @@ export function useChartColors(): ChartColors {
   }, [theme]);
 
   return colors;
+}
+
+/**
+ * Resolves the actual (canvas-usable) font-family stack for the current
+ * locale. ECharts renders to canvas, which can't resolve CSS custom
+ * properties like `var(--font-sans-ar)`, so this reads the browser's fully
+ * computed font-family off <body> instead of passing the raw var() string.
+ */
+export function useChartFontFamily(): string {
+  const locale = useLocale();
+  const [fontFamily, setFontFamily] = useState("sans-serif");
+
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    setFontFamily(getComputedStyle(document.body).fontFamily || "sans-serif");
+  }, [locale]);
+
+  return fontFamily;
 }
 
 export function colorForVar(varName: string, colors: ChartColors): string {

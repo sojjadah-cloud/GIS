@@ -300,7 +300,7 @@ export default function SurveyDashboardPage() {
             </button>
           </div>
 
-          <MapStatusBar status={viewStatus} featureLabel={gis("features")} locale={locale} />
+          <MapStatusBar status={viewStatus} featureLabel={gis("features")} />
 
           <MobileAnalysisDrawer
             tabs={analysisTabs}
