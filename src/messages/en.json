@@ -120,6 +120,7 @@
     "title": "Wadi Al Ansab",
     "subtitle": "Explore the plot plan, building footprints and wadi stream network around Al-Ansab, Bawshar.",
     "searchPlaceholder": "Enter Plot ID",
+    "searchTool": "Search",
     "legend": "Legend",
     "layers": "Layers",
     "basemap": "Basemap",
@@ -127,7 +128,19 @@
     "zoomOut": "Zoom out",
     "home": "Home extent",
     "locate": "My location",
-    "noPlotFound": "No plot matched that ID."
+    "noPlotFound": "No plot matched that ID.",
+    "plotDetails": "Plot Details",
+    "noPlotSelected": "No plot selected",
+    "noPlotSelectedHint": "Search for a plot number or click a plot on the map to inspect it.",
+    "plotNumber": "Plot Number",
+    "landUse": "Land Use",
+    "wilayat": "Wilayat",
+    "village": "Village",
+    "blockNumber": "Block Number",
+    "floors": "Floors",
+    "buildingHeight": "Building Height",
+    "siteStatus": "Site Status",
+    "clickToInspect": "Click any plot on the map to inspect it."
   },
   "survey": {
     "title": "Property Damage Assessment Survey",

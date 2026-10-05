@@ -64,6 +64,8 @@ export interface ArcgisMapViewProps {
   points?: MapPoint[];
   pointsLayerTitle?: string;
   selectedPointId?: string | number | null;
+  /** Titles of real web map layers to hit-test on click (e.g. a plot layer), in addition to the points layer. */
+  identifyLayerTitles?: string[];
 }
 
 export const ArcgisMapView = forwardRef<ArcgisMapViewHandle, ArcgisMapViewProps>(function ArcgisMapView(
@@ -81,6 +83,7 @@ export const ArcgisMapView = forwardRef<ArcgisMapViewHandle, ArcgisMapViewProps>
     points,
     pointsLayerTitle = "Survey Reports",
     selectedPointId,
+    identifyLayerTitles,
   },
   ref
 ) {
@@ -90,6 +93,7 @@ export const ArcgisMapView = forwardRef<ArcgisMapViewHandle, ArcgisMapViewProps>
   const pointsLayerRef = useRef<GraphicsLayer | null>(null);
   const legendRef = useRef<Legend | null>(null);
   const didFitPointsRef = useRef(false);
+  const identifyLayersRef = useRef<Layer[]>([]);
   const [loading, setLoading] = useState(true);
   const locale = useLocale();
   const t = useTranslations("common");
@@ -119,6 +123,12 @@ export const ArcgisMapView = forwardRef<ArcgisMapViewHandle, ArcgisMapViewProps>
         legendRef.current = new Legend({ view, container: legendContainerRef.current });
       }
 
+      if (identifyLayerTitles && identifyLayerTitles.length > 0) {
+        identifyLayersRef.current = webmap.layers
+          .toArray()
+          .filter((l: Layer) => identifyLayerTitles.includes(l.title ?? ""));
+      }
+
       if (onLayersReady) {
         const managed: ManagedLayer[] = webmap.layers.toArray().map((layer: Layer) => ({
           id: layer.id,
@@ -134,7 +144,8 @@ export const ArcgisMapView = forwardRef<ArcgisMapViewHandle, ArcgisMapViewProps>
 
     if (onFeatureClick) {
       view.on("click", async (event) => {
-        const response = await view.hitTest(event, { include: pointsLayer });
+        const include = [pointsLayer, ...identifyLayersRef.current];
+        const response = await view.hitTest(event, { include });
         const graphicHit = response.results.find(
           (r): r is __esri.GraphicHit => "graphic" in r && !!r.graphic.attributes
         );
