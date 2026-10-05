@@ -1,0 +1,238 @@
+{
+  "meta": {
+    "siteName": "WadiWise",
+    "siteTagline": "When Cities Learn from Wadis"
+  },
+  "nav": {
+    "home": "Home",
+    "map": "Wadi Al-Ansab Map",
+    "survey": "Survey",
+    "floodRisk": "Wadi Al Ansab Dashboard",
+    "surveyDashboard": "Survey Dashboard",
+    "recommended": "Recommended",
+    "damageCost": "Damage Cost",
+    "about": "About Us"
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "language": "Language",
+    "theme": "Theme",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode",
+    "menu": "Menu",
+    "close": "Close",
+    "reset": "Reset",
+    "resetFilters": "Reset filters",
+    "filters": "Filters",
+    "activeFilters": "{count} active",
+    "noData": "No data matches the selected filters.",
+    "noDataShort": "No data available.",
+    "loading": "Loading…",
+    "loadingMap": "Loading map…",
+    "error": "Something went wrong. Please try again.",
+    "dataSourceUnavailable": "Data source not connected",
+    "viewOnMap": "View on map",
+    "viewDetails": "View details",
+    "expandMap": "Expand map",
+    "exitFullscreen": "Exit fullscreen",
+    "search": "Search",
+    "clear": "Clear",
+    "count": "Count",
+    "total": "Total",
+    "footer": "© WadiWise. All rights reserved {year}.",
+    "poweredByEsri": "Powered by Esri",
+    "openDashboardSource": "Open full dashboard in ArcGIS",
+    "goHome": "Go to homepage",
+    "viewMap": "View Map"
+  },
+  "home": {
+    "heroTitle": "When Cities Learn From Wadis",
+    "heroSubtitle": "How Oman Reconnects With Its Wadis",
+    "aboutLink": "About us",
+    "section1Heading": "When Cities Block Natural Water Flow",
+    "section1Body1": "Oman has witnessed several floods in recent decades, some of which had a widespread impact on the population and infrastructure.",
+    "section1Body2": "The risks are concentrated in urban areas that have expanded near wadi streams.",
+    "keyResultsHeading": "Key Results",
+    "keyResultsIntro": "This reduces water infiltration and leads to:",
+    "keyResultsList": [
+      "Increased surface runoff",
+      "Water accumulation",
+      "Flash flooding",
+      "Pressure on drainage systems"
+    ],
+    "keyResultsNote": "In areas near wadis, this significantly increases flood risk and reduces natural protection.",
+    "characteristicsHeading": "Key Characteristics",
+    "characteristicsList": [
+      "Sudden and unpredictable flow",
+      "High speed and strong force",
+      "Large volumes of water in a short time",
+      "Often carry debris, rocks, and sediment"
+    ],
+    "characteristicsNote": "These features make wadis particularly dangerous when urban development expands close to their natural paths.",
+    "impactsHeading": "Main Impacts",
+    "impactsBody": "Floods cause damage to homes and infrastructure, disrupt livelihoods, and lead to costly recovery efforts for both communities and government.",
+    "planningHeading": "Future Urban Planning",
+    "planningBody": "What is needed in urban planning is to protect natural water flow paths when designing urban areas. Sustainable drainage systems and permeable surfaces should be included to reduce flooding risks. It is also important to avoid building in flood-prone zones.",
+    "studyAreaHeading": "Study Area",
+    "rainfallHeading": "Rainfall & Flood Data",
+    "rainfallList": [
+      "During Cyclone Shaheen 2021, rainfall in parts of Bawshar was estimated between 120–250 mm within 24–48 hours.",
+      "Short-duration storm intensity reached approximately 40–60 mm/hour during peak rainfall periods.",
+      "Flash flood response time in wadis within Bawshar (e.g., Al Ansab) is typically 30–60 minutes after intense rainfall.",
+      "Wadi water levels during peak flow events reached approximately 1–2.5 meters depending on channel capacity.",
+      "Floodwater spread in low-lying urban areas extended roughly 30–150 meters from wadi channels."
+    ],
+    "riskCitiesHeading": "Top Cities With Substantial Risk",
+    "riskCitiesList": [
+      "Areas like Al-Ansab are considered highly sensitive due to the proximity of urban development to wadi beds.",
+      "Localized flooding affected residential neighborhoods and road networks in Bawshar.",
+      "Temporary road closures occurred in underpasses and near wadi crossings.",
+      "Property-level impacts ranged from minor water intrusion to significant structural damage in some cases."
+    ],
+    "viewMapCta": "View Map"
+  },
+  "map": {
+    "title": "Wadi Al Ansab",
+    "subtitle": "Explore the plot plan, building footprints and wadi stream network around Al-Ansab, Bawshar.",
+    "searchPlaceholder": "Enter Plot ID",
+    "legend": "Legend",
+    "layers": "Layers",
+    "basemap": "Basemap",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "home": "Home extent",
+    "locate": "My location",
+    "noPlotFound": "No plot matched that ID."
+  },
+  "survey": {
+    "title": "Property Damage Assessment Survey",
+    "subtitleAr": "مسح تقييم أضرار الممتلكات",
+    "intro": "Citizens affected by wadi flooding can report property damage directly using the form below. Submissions feed the Survey Dashboard in real time.",
+    "openFullForm": "Open full-screen form",
+    "scanQr": "Scan to open on your phone",
+    "viewDashboard": "View survey results"
+  },
+  "floodRisk": {
+    "title": "Al Ansab Wadi — Early Warning Dashboard",
+    "titleAr": "وادي الأنصب — نظام الإنذار المبكر",
+    "importantNotes": "Important Notes",
+    "notesList": [
+      "Flood risk classification is model-based.",
+      "High and Very High areas require priority attention.",
+      "Always validate results with ground surveys before action planning."
+    ],
+    "plotsAtRisk": "Total Plots at Risk",
+    "buildingsAtRisk": "Total Buildings at Risk",
+    "safePlots": "Safe Plots",
+    "safeBuildings": "Safe Buildings",
+    "plotRiskDistribution": "Flood Risk Distribution of Plots",
+    "buildingRiskDistribution": "Flood Risk Distribution of Buildings",
+    "priorityTable": "High-Priority Land Use (Very High + High Risk)",
+    "landuse": "Land Use",
+    "riskLevel": "Risk Level"
+  },
+  "surveyDashboard": {
+    "title": "Property Damage Assessment Survey",
+    "titleAr": "مسح تقييم أضرار الممتلكات",
+    "residence": "Residence",
+    "damageType": "Damage Type",
+    "displacement": "Displacement",
+    "governmentSupportRequest": "Government Support Request",
+    "addressDamageTable": "Reported Incidents",
+    "address": "Address",
+    "damageLevel": "Damage level",
+    "damageBuildingTable": "Damage by Building Type",
+    "buildingType": "Building Type",
+    "featureDetails": "Incident Details",
+    "incidentName": "Incident Name",
+    "dateOfIncident": "Date of Incident",
+    "residenceDuration": "Residence Duration",
+    "responseRating": "Response Rating",
+    "notes": "Notes",
+    "noNotes": "No additional notes submitted.",
+    "selectFeatureHint": "Select a point on the map or a table row to view full incident details."
+  },
+  "recommended": {
+    "title": "Stop Flooding by Thinking Like a Sponge",
+    "intro": "The Main Idea: Don't try to get rid of rainwater quickly. Instead, let the city act like a sponge — absorb the water, store it temporarily, then release it slowly.",
+    "sections": [
+      {
+        "heading": "1. Decentralized Storage",
+        "subheading": "The Andalusian Idea",
+        "items": [
+          {
+            "title": "Small Home Cisterns (Aljibes)",
+            "body": "Encourage every house to have a small, underground tank to collect rainwater from the roof. If 1,000 homes store 20 cubic meters each, that's 20,000 cubic meters of floodwater removed from the streets."
+          },
+          {
+            "title": "Tree Pits as Mini-Reservoirs",
+            "body": "Plant trees in large pits filled with gravel, not just soil. These pits act as underground tanks, storing water and feeding the tree."
+          }
+        ]
+      },
+      {
+        "heading": "2. Slow Down the Flow",
+        "subheading": "The German Sponge City Idea",
+        "items": [
+          {
+            "title": "Permeable Pavement",
+            "body": "Replace solid asphalt with porous blocks in parking lots and quiet streets. Water goes through the pavement into the ground below."
+          },
+          {
+            "title": "Open, Shallow Canals (Acequias)",
+            "body": "Instead of hiding water in pipes, use beautiful, open, shallow canals to guide water. These slow down the flow and allow water to soak into the sides."
+          },
+          {
+            "title": "Rain Gardens (Sickermulden)",
+            "body": "Create shallow, plant-filled depressions in low points of parks or public areas. These gardens are designed to flood temporarily during a storm."
+          }
+        ]
+      },
+      {
+        "heading": "3. Smart Control",
+        "subheading": "The Modern German Idea",
+        "items": [
+          {
+            "title": "Empty Before the Storm",
+            "body": "Connect storage tanks to a simple sensor and weather forecast. If a big storm is coming, the system automatically empties the tanks before the rain starts, so they are empty and ready to capture the floodwater."
+          }
+        ]
+      },
+      {
+        "heading": "4. Create Flood Parks",
+        "subheading": "Combining Both Ideas",
+        "items": [
+          {
+            "title": "Floodable Parks (Wadis)",
+            "body": "Design parks in low-lying areas as \"floodable zones.\" During normal weather, they are soccer fields or gardens. During heavy rain, they safely fill with water like a bathtub, protecting the surrounding houses."
+          }
+        ]
+      }
+    ],
+    "caseStudyHeading": "Sustainable Drainage Concept from Sultan Haitham City",
+    "caseStudyBody": "A low-impact development approach manages rainwater by mimicking the natural water cycle, allowing runoff to slow down, spread, and infiltrate through green and permeable surfaces rather than being rapidly discharged. It focuses on low-slope areas, where floodwater tends to accumulate, and uses gravity-based drainage supported by natural landform design. Designed using hydrological modeling and historical extreme events, the system can handle rainfall of up to 250 mm per day. This approach represents a resilient model that could be gradually applied in existing cities to reduce flood risks near wadis."
+  },
+  "damageCost": {
+    "title": "Damages Cost",
+    "savingsHeading": "Estimated Flood Damage Savings Using Cyclone Shaheen Data",
+    "savingsBody": "Cyclone Shaheen caused about 300 million OMR in damage, mostly near major wadis. Assuming 50% of losses occur close to wadis, the 26,602 buildings within 1 km of Wadi Al-Ansab face roughly 150 million OMR in potential damage per major flood. Restricting construction in this zone could have avoided most of these losses in Bawshar. Over multiple flood events, total avoided damage could reach up to 450 million OMR.",
+    "exposureHeading": "Identification of Exposed Buildings",
+    "exposureBody": "Based on the weighted overlay results, areas within 1 km of the main wadi streams were classified as high flood-exposure zones. All buildings located within these zones were extracted and counted. The analysis shows that by the end of 2018, 26,602 buildings were constructed within this high-exposure area in Bawshar Wilayat.",
+    "stat1Label": "Cyclone Shaheen damage estimate",
+    "stat1Value": "300M OMR",
+    "stat2Label": "Buildings within 1 km of Wadi Al-Ansab",
+    "stat2Value": "26,602",
+    "stat3Label": "Potential damage per major flood",
+    "stat3Value": "150M OMR",
+    "stat4Label": "Avoidable damage across multiple events",
+    "stat4Value": "Up to 450M OMR"
+  },
+  "about": {
+    "title": "Wadi Wise",
+    "tagline": "Our goal is to enable smarter site selection in Oman by avoiding wadi flood risks using GIS.",
+    "visionHeading": "Our Vision",
+    "visionBody": "Our goal is to enable smarter site selection in Oman by leveraging GIS technology to identify and avoid wadi-related flood risks, ensuring safer and more resilient development investments.",
+    "missionHeading": "Our Mission",
+    "missionBody": "Our mission is to use accurate spatial data to identify wadi flood risks, guide safer site selection, and support informed decisions, while also assessing existing developments and reducing risks to enhance community safety using GIS."
+  }
+}

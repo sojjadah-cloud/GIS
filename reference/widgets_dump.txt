@@ -1,0 +1,1411 @@
+===== pieChartWidget fbb83f95-10a3-413c-9e19-a7eab06c851d =====
+{
+ "headerBackgroundColor": "#19a6a6",
+ "id": "fbb83f95-10a3-413c-9e19-a7eab06c851d",
+ "name": "Pie chart (1)",
+ "title": "Residence",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "datasets": [
+  {
+   "type": "serviceDataset",
+   "name": "main",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "c92bd13c7137493d80b3e54f1915032e",
+    "layerId": 0
+   },
+   "groupByFields": [
+    "residence"
+   ],
+   "orderByFields": [],
+   "statisticDefinitions": [
+    {
+     "onStatisticField": "objectid",
+     "statisticType": "count",
+     "outStatisticFieldName": "COUNT_OBJECTID"
+    }
+   ],
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  }
+ ],
+ "actionMode": "monoSelection",
+ "categoryType": "groupByValues",
+ "type": "pieChartWidget",
+ "chartConfig": {
+  "version": "25.0.0",
+  "type": "chart",
+  "orderOptions": {},
+  "colorMatch": true,
+  "chartRenderer": {
+   "type": "uniqueValue",
+   "field1": "residence",
+   "uniqueValueInfos": [
+    {
+     "label": "5 - 10 years",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       235,
+       131,
+       28,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "width": 0
+      }
+     },
+     "value": "5 - 10 years"
+    },
+    {
+     "label": "Less than 5 years",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       0,
+       122,
+       194,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "width": 0
+      }
+     },
+     "value": "Less than 5 years"
+    },
+    {
+     "label": "More than 10 years",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       66,
+       196,
+       54,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "width": 0
+      }
+     },
+     "value": "More than 10 years"
+    },
+    {
+     "label": "null",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       214,
+       214,
+       214,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "width": 0
+      }
+     },
+     "value": null
+    },
+    {
+     "label": "blank",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       214,
+       214,
+       214,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "width": 0
+      }
+     },
+     "value": ""
+    }
+   ]
+  },
+  "series": [
+   {
+    "type": "pieSeries",
+    "id": "main",
+    "name": "main",
+    "x": "residence",
+    "dataLabels": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "size": 12,
+       "style": "normal",
+       "weight": "normal"
+      }
+     }
+    },
+    "dataTooltipVisible": true,
+    "dataTooltipReverseColor": true,
+    "optimizeDataLabelsOverlapping": true,
+    "alignDataLabels": true,
+    "innerRadius": 0,
+    "startAngle": 270,
+    "y": "COUNT_OBJECTID",
+    "ticks": {
+     "type": "pieTick",
+     "lineSymbol": {
+      "type": "esriSLS",
+      "style": "esriSLSSolid",
+      "color": [
+       214,
+       214,
+       214,
+       127.5
+      ]
+     }
+    },
+    "fillSymbol": {
+     "type": "esriSFS",
+     "style": "esriSFSSolid",
+     "color": [
+      214,
+      214,
+      214,
+      255
+     ],
+     "outline": {
+      "type": "esriSLS",
+      "style": "esriSLSSolid",
+      "width": 0
+     }
+    },
+    "dataLabelsOffset": 10,
+    "sliceGrouping": {
+     "sliceId": "__other-slice__",
+     "percentageThreshold": 0,
+     "fillSymbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       214,
+       214,
+       214,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "width": 0
+      }
+     }
+    }
+   }
+  ],
+  "legend": {
+   "type": "chartLegend",
+   "visible": false,
+   "body": {
+    "type": "esriTS",
+    "angle": 0,
+    "font": {
+     "family": "inherit",
+     "size": 12,
+     "style": "normal",
+     "weight": "normal"
+    }
+   },
+   "position": "bottom",
+   "displayPercentage": false,
+   "displayNumericValue": true,
+   "labelMaxWidth": 100,
+   "valueLabelMaxWidth": 50
+  }
+ },
+ "dataLabelsFormat": "percentage",
+ "valueFormat": {
+  "name": "value",
+  "prefix": true,
+  "style": "decimal",
+  "useGrouping": true,
+  "minimumFractionDigits": 0,
+  "maximumFractionDigits": 1
+ },
+ "percentageFormat": {
+  "name": "percentage",
+  "prefix": false,
+  "style": "percent",
+  "useGrouping": true,
+  "maximumFractionDigits": 2
+ }
+}
+
+===== gaugeWidget 3d297e0c-68fa-4095-abd2-0bc505a22aef =====
+{
+ "headerTextColor": "#ffffff",
+ "headerBackgroundColor": "#19a6a6",
+ "id": "3d297e0c-68fa-4095-abd2-0bc505a22aef",
+ "name": "Gauge (1)",
+ "title": " Government Support Request",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "datasets": [
+  {
+   "type": "staticDataset",
+   "name": "min",
+   "data": 0
+  },
+  {
+   "type": "serviceDataset",
+   "name": "main",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "c92bd13c7137493d80b3e54f1915032e",
+    "layerId": 0
+   },
+   "filter": {
+    "type": "filterGroup",
+    "condition": "OR",
+    "rules": [
+     {
+      "type": "filterGroup",
+      "condition": "AND",
+      "rules": [
+       {
+        "type": "filterRule",
+        "field": {
+         "name": "government_support_request",
+         "type": "string"
+        },
+        "operator": "equal",
+        "constraint": {
+         "type": "value",
+         "value": "Yes"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "groupByFields": [],
+   "orderByFields": [],
+   "statisticDefinitions": [
+    {
+     "onStatisticField": "objectid",
+     "statisticType": "count",
+     "outStatisticFieldName": "COUNT_OBJECTID"
+    }
+   ],
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  },
+  {
+   "type": "serviceDataset",
+   "name": "max",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "c92bd13c7137493d80b3e54f1915032e",
+    "layerId": 0
+   },
+   "groupByFields": [],
+   "orderByFields": [],
+   "statisticDefinitions": [
+    {
+     "onStatisticField": "objectid",
+     "statisticType": "count",
+     "outStatisticFieldName": "COUNT_OBJECTID"
+    }
+   ],
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  }
+ ],
+ "type": "gaugeWidget",
+ "chartConfig": {
+  "version": "25.0.0",
+  "type": "chart",
+  "orderOptions": {},
+  "subType": "statisticGauge",
+  "innerRadius": 75,
+  "startAngle": -210,
+  "endAngle": 30,
+  "axes": [
+   {
+    "type": "chartAxis",
+    "visible": true,
+    "title": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "bold"
+      }
+     }
+    },
+    "valueFormat": {
+     "type": "number",
+     "intlOptions": {
+      "style": "decimal",
+      "notation": "standard",
+      "minimumFractionDigits": 0,
+      "maximumFractionDigits": 1
+     }
+    },
+    "lineSymbol": {
+     "type": "esriSLS",
+     "style": "esriSLSSolid",
+     "width": 0
+    },
+    "labels": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "normal"
+      }
+     }
+    },
+    "guides": [
+     {
+      "type": "chartGuide",
+      "tooltipReverseColor": true,
+      "above": false,
+      "start": "0%",
+      "end": "100%",
+      "style": {
+       "type": "esriSFS",
+       "style": "esriSFSSolid",
+       "color": [
+        235,
+        28,
+        28,
+        255
+       ]
+      },
+      "name": "background",
+      "visible": true
+     },
+     {
+      "type": "chartGuide",
+      "tooltipReverseColor": true,
+      "above": false,
+      "start": "0%",
+      "style": {
+       "type": "esriSFS",
+       "style": "esriSFSSolid",
+       "color": [
+        36,
+        199,
+        49,
+        255
+       ]
+      },
+      "name": "value",
+      "visible": true
+     }
+    ],
+    "innerLabel": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "color": [
+       36,
+       199,
+       49,
+       255
+      ],
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "normal"
+      },
+      "verticalAlignment": "middle"
+     }
+    },
+    "needle": {
+     "type": "gaugeNeedle",
+     "visible": false,
+     "startWidth": 8,
+     "endWidth": 1,
+     "innerRadius": 0,
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid"
+     }
+    },
+    "ticks": {
+     "type": "gaugeAxisTick",
+     "visible": false
+    },
+    "onlyShowFirstAndLastLabels": true
+   }
+  ],
+  "series": [
+   {
+    "type": "gaugeSeries",
+    "id": "main",
+    "name": "main",
+    "x": "COUNT_OBJECTID",
+    "dataLabels": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "normal"
+      }
+     }
+    },
+    "dataTooltipVisible": true,
+    "dataTooltipReverseColor": true
+   }
+  ]
+ },
+ "valueType": "statistic",
+ "style": "progress",
+ "displayAsPercentage": false,
+ "valueFormat": {
+  "name": "value",
+  "prefix": true,
+  "style": "decimal",
+  "useGrouping": true,
+  "maximumFractionDigits": 1
+ },
+ "noValueState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "colorThresholds": []
+}
+
+===== indicatorWidget f53dc252-24d8-4acb-9534-b47fab3dd186 =====
+{
+ "headerBackgroundColor": "#b51f1f",
+ "id": "f53dc252-24d8-4acb-9534-b47fab3dd186",
+ "name": "Indicator (1)",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "datasets": [
+  {
+   "type": "serviceDataset",
+   "name": "main",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "c92bd13c7137493d80b3e54f1915032e",
+    "layerId": 0
+   },
+   "groupByFields": [],
+   "orderByFields": [],
+   "statisticDefinitions": [
+    {
+     "onStatisticField": "objectid",
+     "statisticType": "count",
+     "outStatisticFieldName": "COUNT_OBJECTID"
+    }
+   ],
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  }
+ ],
+ "type": "indicatorWidget",
+ "defaultSettings": {
+  "backgroundColor": "#272727",
+  "topSection": {
+   "fontSize": 80,
+   "textInfo": {
+    "text": "Displacement"
+   }
+  },
+  "middleSection": {
+   "fontSize": 160,
+   "textInfo": {
+    "text": "{calculated/value}"
+   },
+   "iconInfo": {
+    "fillColor": "#19a6a6",
+    "align": "left",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon \" role=\"button\" viewBox=\"0 0 21 21\"><path d=\"M5 7.998H4v-1l6.5-5 6.5 5v1h-1v2.5a3.285 3.285 0 0 1-1.756-1.168.999.999 0 0 0-.718-.332H13.5a1 1 0 0 0-.709.294 3.236 3.236 0 0 1-2.17 1.155h-.242a3.236 3.236 0 0 1-2.17-1.155 1 1 0 0 0-.709-.294h-.026a.999.999 0 0 0-.718.332A3.285 3.285 0 0 1 5 10.498zm13 3.457a3.129 3.129 0 0 1-1.655.596c-1.168 0-2.098-1.222-2.845-2.053-.829.831-1.808 1.953-2.879 1.953h-.242c-1.071 0-2.05-1.122-2.879-1.953-.747.831-1.677 2.053-2.845 2.053A3.01 3.01 0 0 1 3 11.387v.99a3.735 3.735 0 0 0 1.68.621 3.995 3.995 0 0 0 2.82-1.494 3.672 3.672 0 0 0 2.807 1.494h.386a3.672 3.672 0 0 0 2.807-1.494 3.995 3.995 0 0 0 2.82 1.494 3.87 3.87 0 0 0 1.68-.627zm0 3a3.129 3.129 0 0 1-1.655.596c-1.168 0-2.098-1.222-2.845-2.053-.829.831-1.808 1.953-2.879 1.953h-.242c-1.071 0-2.05-1.122-2.879-1.953-.747.831-1.677 2.053-2.845 2.053A3.01 3.01 0 0 1 3 14.387v.99a3.735 3.735 0 0 0 1.68.621 3.995 3.995 0 0 0 2.82-1.494 3.672 3.672 0 0 0 2.807 1.494h.386a3.672 3.672 0 0 0 2.807-1.494 3.995 3.995 0 0 0 2.82 1.494 3.87 3.87 0 0 0 1.68-.627z\"/></svg>"
+   }
+  },
+  "bottomSection": {
+   "fontSize": 80,
+   "textInfo": {
+    "text": null
+   }
+  }
+ },
+ "comparison": "none",
+ "valueFormat": {
+  "name": "value",
+  "prefix": true,
+  "style": "decimal",
+  "useGrouping": true,
+  "maximumFractionDigits": 1
+ },
+ "percentageFormat": {
+  "name": "percentage",
+  "prefix": false,
+  "style": "percent",
+  "useGrouping": true
+ },
+ "ratioFormat": {
+  "name": "ratio",
+  "prefix": false,
+  "style": "decimal",
+  "useGrouping": true,
+  "maximumFractionDigits": 2
+ },
+ "valueType": "statistic",
+ "noValueState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ }
+}
+
+===== tableWidget 222ace05-3f5c-42f1-938c-43b59ba8dbe0 =====
+{
+ "id": "222ace05-3f5c-42f1-938c-43b59ba8dbe0",
+ "name": "Table (2)",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "datasets": [
+  {
+   "type": "serviceDataset",
+   "name": "main",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "c92bd13c7137493d80b3e54f1915032e",
+    "layerId": 0
+   },
+   "filter": {
+    "type": "filterGroup",
+    "condition": "OR",
+    "rules": [
+     {
+      "type": "filterGroup",
+      "condition": "AND",
+      "rules": [
+       {
+        "type": "filterRule",
+        "field": {
+         "name": "address_question",
+         "type": "string"
+        },
+        "operator": "not_equal",
+        "constraint": {
+         "type": "value",
+         "value": "جنوب الباطنة، غلا، غلا الصناعية، 1564"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "groupByFields": [],
+   "orderByFields": [],
+   "statisticDefinitions": [],
+   "maxFeatures": 1000,
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  }
+ ],
+ "type": "tableWidget",
+ "dataSettings": {
+  "type": "features",
+  "valueFields": [
+   "address_question",
+   "damage_level"
+  ]
+ },
+ "tableSettings": {
+  "layout": "fit-columns",
+  "scale": "medium",
+  "hoverText": false,
+  "rowStriping": false,
+  "selectionMode": "single",
+  "verticalGrid": {
+   "thickness": 1
+  },
+  "horizontalGrid": {
+   "thickness": 1
+  },
+  "headerSettings": {
+   "backgroundColor": "#19a6a6",
+   "rule": {
+    "color": "#19a6a600",
+    "thickness": 3
+   }
+  }
+ },
+ "columnSettings": [
+  {
+   "title": "Address",
+   "fieldName": "address_question",
+   "textAlign": "left",
+   "isBold": false,
+   "isItalic": false,
+   "isUnderlined": false
+  },
+  {
+   "title": "Damage level",
+   "fieldName": "damage_level",
+   "textAlign": "left",
+   "isBold": false,
+   "isItalic": false,
+   "isUnderlined": false
+  }
+ ],
+ "editingEnabled": false,
+ "editColumnPlacement": "end"
+}
+
+===== mapWidget d7af387a-1d20-40b0-bbe9-74d480940501 =====
+{
+ "id": "d7af387a-1d20-40b0-bbe9-74d480940501",
+ "name": "Bowsher_Project_2_2",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "events": [
+  {
+   "type": "extentChanged",
+   "actions": [
+    {
+     "targets": [
+      {
+       "targetId": "222ace05-3f5c-42f1-938c-43b59ba8dbe0#main",
+       "by": "geometry",
+       "requiresSelection": false
+      },
+      {
+       "targetId": "3d297e0c-68fa-4095-abd2-0bc505a22aef#max",
+       "by": "geometry",
+       "requiresSelection": false
+      },
+      {
+       "targetId": "3d297e0c-68fa-4095-abd2-0bc505a22aef#main",
+       "by": "geometry",
+       "requiresSelection": false
+      },
+      {
+       "targetId": "f53dc252-24d8-4acb-9534-b47fab3dd186#main",
+       "by": "geometry",
+       "requiresSelection": false
+      },
+      {
+       "targetId": "fbb83f95-10a3-413c-9e19-a7eab06c851d#main",
+       "by": "geometry",
+       "requiresSelection": false
+      },
+      {
+       "targetId": "97cf27d9-43ad-45ee-b353-00337275a743#main",
+       "by": "geometry",
+       "requiresSelection": false
+      },
+      {
+       "targetId": "412a4353-e4be-44b7-9821-e9fa37d3a25c#main",
+       "by": "geometry",
+       "requiresSelection": false
+      }
+     ],
+     "type": "filter"
+    }
+   ]
+  }
+ ],
+ "type": "mapWidget",
+ "flashRepeats": 3,
+ "itemId": "32d49a55d8354ecfb786307115591515",
+ "mapTools": [
+  {
+   "type": "searchTool"
+  },
+  {
+   "type": "legendTool"
+  },
+  {
+   "type": "bookmarksTool"
+  },
+  {
+   "type": "mapContentsTool"
+  }
+ ],
+ "showMeasureTool": false,
+ "showNavigation": true,
+ "showPanRotate": false,
+ "showLocate": true,
+ "showCompass": false,
+ "showPopup": true,
+ "scalebarStyle": "none",
+ "editingEnabled": false,
+ "trackedFeatureRadius": 60,
+ "selectTool": {
+  "type": "selectTool",
+  "clickToSelect": false,
+  "advanceSketchTools": []
+ }
+}
+
+===== tableWidget 412a4353-e4be-44b7-9821-e9fa37d3a25c =====
+{
+ "id": "412a4353-e4be-44b7-9821-e9fa37d3a25c",
+ "name": "Table (3)",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "datasets": [
+  {
+   "type": "serviceDataset",
+   "name": "main",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "c92bd13c7137493d80b3e54f1915032e",
+    "layerId": 0
+   },
+   "filter": {
+    "type": "filterGroup",
+    "condition": "OR",
+    "rules": [
+     {
+      "type": "filterGroup",
+      "condition": "AND",
+      "rules": [
+       {
+        "type": "filterRule",
+        "field": {
+         "name": "building_type",
+         "type": "string"
+        },
+        "operator": "is_in",
+        "constraint": {
+         "type": "values",
+         "values": [
+          "Villa",
+          "Apartment",
+          "House",
+          "other"
+         ]
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "groupByFields": [],
+   "orderByFields": [],
+   "statisticDefinitions": [],
+   "maxFeatures": 1000,
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  }
+ ],
+ "type": "tableWidget",
+ "dataSettings": {
+  "type": "features",
+  "valueFields": [
+   "damage_level",
+   "building_type"
+  ]
+ },
+ "tableSettings": {
+  "layout": "fit-columns",
+  "scale": "medium",
+  "hoverText": false,
+  "rowStriping": false,
+  "selectionColor": "#2493d4",
+  "selectionMode": "single",
+  "verticalGrid": {
+   "thickness": 1
+  },
+  "horizontalGrid": {
+   "thickness": 1
+  },
+  "headerSettings": {
+   "backgroundColor": "#19a6a6",
+   "rule": {
+    "thickness": 3
+   }
+  }
+ },
+ "columnSettings": [
+  {
+   "title": "Damage level",
+   "fieldName": "damage_level",
+   "textAlign": "left",
+   "isBold": false,
+   "isItalic": false,
+   "isUnderlined": false
+  },
+  {
+   "title": "Building Type",
+   "fieldName": "building_type",
+   "textAlign": "left",
+   "isBold": false,
+   "isItalic": false,
+   "isUnderlined": false
+  }
+ ],
+ "editingEnabled": false,
+ "editColumnPlacement": "end"
+}
+
+===== serialChartWidget 97cf27d9-43ad-45ee-b353-00337275a743 =====
+{
+ "headerBackgroundColor": "#19a6a6",
+ "id": "97cf27d9-43ad-45ee-b353-00337275a743",
+ "name": "Serial chart (2)",
+ "title": "Damage Type",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "datasets": [
+  {
+   "type": "serviceDataset",
+   "name": "main",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "c92bd13c7137493d80b3e54f1915032e",
+    "layerId": 0
+   },
+   "filter": {
+    "type": "filterGroup",
+    "condition": "OR",
+    "rules": [
+     {
+      "type": "filterGroup",
+      "condition": "AND",
+      "rules": [
+       {
+        "type": "filterRule",
+        "field": {
+         "name": "damage_type",
+         "type": "string"
+        },
+        "operator": "is_in",
+        "constraint": {
+         "type": "values",
+         "values": [
+          "Damage_to_property",
+          "Damage_to_property,Financial_losses_(vehicles_belo",
+          "Financial_losses_(vehicles_belo",
+          "Financial_losses_(vehicles_belo,Infrastructure_damage_(sanitati",
+          "Infrastructure_damage_(sanitati,other"
+         ]
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "groupByFields": [
+    "damage_type"
+   ],
+   "orderByFields": [],
+   "statisticDefinitions": [
+    {
+     "onStatisticField": "objectid",
+     "statisticType": "count",
+     "outStatisticFieldName": "COUNT_OBJECTID"
+    }
+   ],
+   "maxFeatures": 1000,
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  }
+ ],
+ "actionMode": "monoSelection",
+ "categoryType": "groupByValues",
+ "type": "serialChartWidget",
+ "valueFormat": {
+  "name": "value",
+  "prefix": true,
+  "style": "decimal",
+  "useGrouping": true,
+  "maximumFractionDigits": 1
+ },
+ "labelFormat": {
+  "name": "label",
+  "prefix": true,
+  "style": "decimal",
+  "useGrouping": true,
+  "maximumFractionDigits": 1
+ },
+ "category": {
+  "labelOverrides": [],
+  "nullLabel": "null",
+  "blankLabel": "blank"
+ },
+ "parseDates": false,
+ "minPeriod": "MM",
+ "categoryAxisLabelsBehavior": "wrap",
+ "chartConfig": {
+  "version": "25.0.0",
+  "type": "chart",
+  "orderOptions": {},
+  "colorMatch": true,
+  "chartRenderer": {
+   "type": "uniqueValue",
+   "field1": "damage_type",
+   "uniqueValueInfos": [
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       18,
+       177,
+       230,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        18,
+        177,
+        230,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "value": "Damage_to_property"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       53,
+       219,
+       31,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        53,
+        219,
+        31,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "value": "Damage_to_property,Financial_losses_(vehicles_belo"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       214,
+       55,
+       24,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        214,
+        55,
+        24,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "value": "Financial_losses_(vehicles_belo"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       227,
+       36,
+       221,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        227,
+        36,
+        221,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "value": "Financial_losses_(vehicles_belo,Infrastructure_damage_(sanitati"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       206,
+       222,
+       35,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        206,
+        222,
+        35,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "value": "Infrastructure_damage_(sanitati,other"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       214,
+       214,
+       214,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        214,
+        214,
+        214,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "value": null
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       214,
+       214,
+       214,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        214,
+        214,
+        214,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "value": ""
+    }
+   ]
+  },
+  "axes": [
+   {
+    "type": "chartAxis",
+    "visible": true,
+    "title": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 270,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "bold"
+      },
+      "text": "Damage Type"
+     }
+    },
+    "valueFormat": {
+     "type": "category",
+     "characterLimit": 11
+    },
+    "lineSymbol": {
+     "type": "esriSLS",
+     "style": "esriSLSSolid",
+     "width": 1
+    },
+    "labels": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "normal"
+      }
+     }
+    },
+    "grid": {
+     "type": "esriSLS",
+     "style": "esriSLSSolid",
+     "width": 1
+    },
+    "guides": [],
+    "scrollbar": {
+     "width": 15,
+     "gripSize": 22
+    }
+   },
+   {
+    "type": "chartAxis",
+    "visible": true,
+    "title": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "bold"
+      },
+      "text": "Count"
+     }
+    },
+    "valueFormat": {
+     "type": "number",
+     "intlOptions": {
+      "style": "decimal",
+      "notation": "standard",
+      "minimumFractionDigits": 0,
+      "maximumFractionDigits": 1
+     }
+    },
+    "lineSymbol": {
+     "type": "esriSLS",
+     "style": "esriSLSSolid",
+     "width": 1
+    },
+    "labels": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "normal"
+      }
+     }
+    },
+    "grid": {
+     "type": "esriSLS",
+     "style": "esriSLSSolid",
+     "width": 1
+    },
+    "guides": [],
+    "buffer": true
+   }
+  ],
+  "series": [
+   {
+    "type": "barSeries",
+    "id": "COUNT_OBJECTID",
+    "name": "groupByValues",
+    "x": "damage_type",
+    "dataLabels": {
+     "type": "chartText",
+     "visible": false,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "normal"
+      }
+     }
+    },
+    "dataTooltipVisible": true,
+    "dataTooltipReverseColor": true,
+    "y": "COUNT_OBJECTID",
+    "fillSymbol": {
+     "type": "esriSFS",
+     "style": "esriSFSSolid",
+     "color": [
+      214,
+      214,
+      214,
+      255
+     ],
+     "outline": {
+      "type": "esriSLS",
+      "style": "esriSLSSolid",
+      "color": [
+       214,
+       214,
+       214,
+       255
+      ],
+      "width": 1
+     }
+    }
+   }
+  ],
+  "legend": {
+   "type": "chartLegend",
+   "visible": false,
+   "body": {
+    "type": "esriTS",
+    "angle": 0,
+    "font": {
+     "family": "inherit",
+     "style": "normal",
+     "weight": "normal"
+    }
+   },
+   "position": "bottom"
+  },
+  "horizontalAxisLabelsBehavior": "hide",
+  "verticalAxisLabelsBehavior": "wrap",
+  "rotated": true,
+  "cursorCrosshair": {
+   "type": "cursorCrosshair",
+   "verticalLineVisible": false,
+   "horizontalLineVisible": false
+  },
+  "stackedType": "sideBySide"
+ }
+}
+

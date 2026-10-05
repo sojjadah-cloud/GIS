@@ -1,0 +1,1893 @@
+===== mapWidget 8bb9bf9d-8dba-42fb-8ae3-b20d0ed217cc =====
+{
+ "id": "8bb9bf9d-8dba-42fb-8ae3-b20d0ed217cc",
+ "name": "Bowsher_Project_2_2",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "events": [
+  {
+   "type": "extentChanged",
+   "actions": [
+    {
+     "targets": [
+      {
+       "targetId": "b8ff9c20-6f93-42c3-a520-6019e8b1de85#main",
+       "by": "geometry",
+       "requiresSelection": false
+      },
+      {
+       "targetId": "150a5fdf-6d3c-4465-95c8-d7bf54a6beb9#main",
+       "by": "geometry",
+       "requiresSelection": false
+      },
+      {
+       "targetId": "453e2ef1-1117-4241-9e79-8ec36cad9eea#main",
+       "by": "geometry",
+       "requiresSelection": false
+      },
+      {
+       "targetId": "30518cf6-b40c-4992-b8ed-7988306f8340#main",
+       "by": "geometry",
+       "requiresSelection": false
+      },
+      {
+       "targetId": "5928a54a-a08e-4831-82f4-9e3351885843#main",
+       "by": "geometry",
+       "requiresSelection": false
+      },
+      {
+       "targetId": "d3a5025d-f8c5-4c35-9df8-0a5152dc3a91#main",
+       "by": "geometry",
+       "requiresSelection": false
+      },
+      {
+       "targetId": "d3a5025d-f8c5-4c35-9df8-0a5152dc3a91#max",
+       "by": "geometry",
+       "requiresSelection": false
+      }
+     ],
+     "type": "filter"
+    }
+   ]
+  }
+ ],
+ "type": "mapWidget",
+ "flashRepeats": 3,
+ "itemId": "32d49a55d8354ecfb786307115591515",
+ "mapTools": [
+  {
+   "type": "searchTool"
+  },
+  {
+   "type": "legendTool"
+  },
+  {
+   "type": "bookmarksTool"
+  },
+  {
+   "type": "mapContentsTool"
+  },
+  {
+   "type": "basemapGalleryTool"
+  }
+ ],
+ "showMeasureTool": true,
+ "showNavigation": true,
+ "showPanRotate": false,
+ "showLocate": true,
+ "showCompass": true,
+ "showPopup": true,
+ "scalebarStyle": "none",
+ "editingEnabled": false,
+ "trackedFeatureRadius": 60,
+ "selectTool": {
+  "type": "selectTool",
+  "clickToSelect": false,
+  "advanceSketchTools": []
+ }
+}
+
+===== pieChartWidget b8ff9c20-6f93-42c3-a520-6019e8b1de85 =====
+{
+ "backgroundColor": "#2b2b2b",
+ "headerBackgroundColor": "#29948b",
+ "id": "b8ff9c20-6f93-42c3-a520-6019e8b1de85",
+ "name": "Pie chart (2)",
+ "title": "Flood Risk Distribution of Plots ",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "datasets": [
+  {
+   "type": "serviceDataset",
+   "name": "main",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "32d49a55d8354ecfb786307115591515",
+    "layerId": "19de4db9506-layer-25"
+   },
+   "filter": {
+    "type": "filterGroup",
+    "condition": "OR",
+    "rules": [
+     {
+      "type": "filterGroup",
+      "condition": "AND",
+      "rules": [
+       {
+        "type": "filterRule",
+        "field": {
+         "name": "Risk_Level",
+         "type": "string"
+        },
+        "operator": "is_in",
+        "constraint": {
+         "type": "values",
+         "values": [
+          "خطر مرتفع جدًا - Very High Risk",
+          "آمن - Safe",
+          "خطر منخفض - Low Risk",
+          "خطر مرتفع - High Risk",
+          "خطر متوسط - Medium Risk"
+         ]
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "groupByFields": [
+    "Risk_Level"
+   ],
+   "orderByFields": [],
+   "statisticDefinitions": [
+    {
+     "onStatisticField": "OBJECTID_1",
+     "statisticType": "count",
+     "outStatisticFieldName": "COUNT_OBJECTID_1"
+    }
+   ],
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  }
+ ],
+ "actionMode": "monoSelection",
+ "categoryType": "groupByValues",
+ "type": "pieChartWidget",
+ "chartConfig": {
+  "version": "25.0.0",
+  "type": "chart",
+  "orderOptions": {},
+  "colorMatch": true,
+  "chartRenderer": {
+   "type": "uniqueValue",
+   "field1": "Risk_Level",
+   "uniqueValueInfos": [
+    {
+     "label": "خطر مرتفع جدًا - Very High Risk",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       224,
+       13,
+       13,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "width": 0
+      }
+     },
+     "value": "خطر مرتفع جدًا - Very High Risk"
+    },
+    {
+     "label": "آمن - Safe",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       58,
+       117,
+       7,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "width": 0
+      }
+     },
+     "value": "آمن - Safe"
+    },
+    {
+     "label": "خطر منخفض - Low Risk",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       77,
+       173,
+       21,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "width": 0
+      }
+     },
+     "value": "خطر منخفض - Low Risk"
+    },
+    {
+     "label": "خطر مرتفع - High Risk",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       236,
+       119,
+       9,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "width": 0
+      }
+     },
+     "value": "خطر مرتفع - High Risk"
+    },
+    {
+     "label": "خطر متوسط - Medium Risk",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       245,
+       237,
+       15,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "width": 0
+      }
+     },
+     "value": "خطر متوسط - Medium Risk"
+    },
+    {
+     "label": "null",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       214,
+       214,
+       214,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "width": 0
+      }
+     },
+     "value": null
+    },
+    {
+     "label": "blank",
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       214,
+       214,
+       214,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "width": 0
+      }
+     },
+     "value": ""
+    }
+   ]
+  },
+  "series": [
+   {
+    "type": "pieSeries",
+    "id": "main",
+    "name": "main",
+    "x": "Risk_Level",
+    "dataLabels": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "size": 14,
+       "style": "normal",
+       "weight": "normal"
+      }
+     }
+    },
+    "dataTooltipVisible": true,
+    "dataTooltipReverseColor": true,
+    "optimizeDataLabelsOverlapping": true,
+    "alignDataLabels": true,
+    "innerRadius": 44,
+    "startAngle": 270,
+    "y": "COUNT_OBJECTID_1",
+    "ticks": {
+     "type": "pieTick",
+     "lineSymbol": {
+      "type": "esriSLS",
+      "style": "esriSLSSolid",
+      "color": [
+       214,
+       214,
+       214,
+       127.5
+      ]
+     }
+    },
+    "fillSymbol": {
+     "type": "esriSFS",
+     "style": "esriSFSSolid",
+     "color": [
+      214,
+      214,
+      214,
+      255
+     ],
+     "outline": {
+      "type": "esriSLS",
+      "style": "esriSLSSolid",
+      "width": 0
+     }
+    },
+    "dataLabelsOffset": 9,
+    "sliceGrouping": {
+     "sliceId": "__other-slice__",
+     "percentageThreshold": 0,
+     "fillSymbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       214,
+       214,
+       214,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "width": 0
+      }
+     }
+    }
+   }
+  ],
+  "legend": {
+   "type": "chartLegend",
+   "visible": false,
+   "body": {
+    "type": "esriTS",
+    "angle": 0,
+    "font": {
+     "family": "inherit",
+     "size": 14,
+     "style": "normal",
+     "weight": "normal"
+    }
+   },
+   "position": "bottom",
+   "displayPercentage": false,
+   "displayNumericValue": true,
+   "labelMaxWidth": 100,
+   "valueLabelMaxWidth": 50
+  }
+ },
+ "dataLabelsFormat": "value",
+ "valueFormat": {
+  "name": "value",
+  "prefix": true,
+  "style": "decimal",
+  "useGrouping": true,
+  "maximumFractionDigits": 1
+ },
+ "percentageFormat": {
+  "name": "percentage",
+  "prefix": false,
+  "style": "percent",
+  "useGrouping": true,
+  "maximumFractionDigits": 2
+ }
+}
+
+===== serialChartWidget 150a5fdf-6d3c-4465-95c8-d7bf54a6beb9 =====
+{
+ "headerBackgroundColor": "#259c96",
+ "id": "150a5fdf-6d3c-4465-95c8-d7bf54a6beb9",
+ "name": "Serial chart (1) (copy)",
+ "title": "Flood Risk Distribution of Buildings ",
+ "topCaption": "",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "datasets": [
+  {
+   "type": "serviceDataset",
+   "name": "main",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "32d49a55d8354ecfb786307115591515",
+    "layerId": "19de4db9506-layer-25"
+   },
+   "filter": {
+    "type": "filterGroup",
+    "condition": "OR",
+    "rules": [
+     {
+      "type": "filterGroup",
+      "condition": "AND",
+      "rules": [
+       {
+        "type": "filterRule",
+        "field": {
+         "name": "Risk_Level",
+         "type": "string"
+        },
+        "operator": "is_in",
+        "constraint": {
+         "type": "values",
+         "values": [
+          "خطر مرتفع جدًا - Very High Risk",
+          "آمن - Safe",
+          "خطر منخفض - Low Risk",
+          "خطر مرتفع - High Risk",
+          "خطر متوسط - Medium Risk"
+         ]
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "groupByFields": [
+    "Risk_Level"
+   ],
+   "orderByFields": [],
+   "statisticDefinitions": [
+    {
+     "onStatisticField": "OBJECTID_1",
+     "statisticType": "count",
+     "outStatisticFieldName": "COUNT_OBJECTID_1"
+    }
+   ],
+   "maxFeatures": 1000,
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  }
+ ],
+ "actionMode": "monoSelection",
+ "categoryType": "groupByValues",
+ "type": "serialChartWidget",
+ "valueFormat": {
+  "name": "value",
+  "prefix": true,
+  "style": "decimal",
+  "useGrouping": true,
+  "maximumFractionDigits": 1
+ },
+ "labelFormat": {
+  "name": "label",
+  "prefix": true,
+  "style": "decimal",
+  "useGrouping": true,
+  "maximumFractionDigits": 1
+ },
+ "category": {
+  "labelOverrides": [],
+  "nullLabel": "null",
+  "blankLabel": "blank"
+ },
+ "parseDates": false,
+ "minPeriod": "MM",
+ "categoryAxisLabelsBehavior": "hide",
+ "chartConfig": {
+  "version": "25.0.0",
+  "type": "chart",
+  "orderOptions": {},
+  "colorMatch": true,
+  "chartRenderer": {
+   "type": "uniqueValue",
+   "field1": "Risk_Level",
+   "uniqueValueInfos": [
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       224,
+       13,
+       13,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        224,
+        13,
+        13,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "value": "خطر مرتفع جدًا - Very High Risk"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       64,
+       133,
+       12,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        64,
+        133,
+        12,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "value": "آمن - Safe"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       146,
+       232,
+       53,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        146,
+        232,
+        53,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "value": "خطر منخفض - Low Risk"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       232,
+       155,
+       12,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        232,
+        155,
+        12,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "value": "خطر مرتفع - High Risk"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       252,
+       233,
+       29,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        252,
+        233,
+        29,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "value": "خطر متوسط - Medium Risk"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       214,
+       214,
+       214,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        214,
+        214,
+        214,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "value": null
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       214,
+       214,
+       214,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        214,
+        214,
+        214,
+        255
+       ],
+       "width": 1
+      }
+     },
+     "value": ""
+    }
+   ]
+  },
+  "axes": [
+   {
+    "type": "chartAxis",
+    "visible": true,
+    "title": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 270,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "bold"
+      },
+      "text": "Flood Risk Levels"
+     }
+    },
+    "valueFormat": {
+     "type": "category",
+     "characterLimit": 11
+    },
+    "lineSymbol": {
+     "type": "esriSLS",
+     "style": "esriSLSSolid",
+     "width": 1
+    },
+    "labels": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "normal"
+      }
+     }
+    },
+    "grid": {
+     "type": "esriSLS",
+     "style": "esriSLSSolid",
+     "width": 1
+    },
+    "guides": [],
+    "scrollbar": {
+     "width": 15,
+     "gripSize": 22
+    }
+   },
+   {
+    "type": "chartAxis",
+    "visible": true,
+    "title": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 270,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "bold"
+      }
+     }
+    },
+    "valueFormat": {
+     "type": "number",
+     "intlOptions": {
+      "style": "decimal",
+      "notation": "standard",
+      "minimumFractionDigits": 0,
+      "maximumFractionDigits": 1
+     }
+    },
+    "lineSymbol": {
+     "type": "esriSLS",
+     "style": "esriSLSSolid",
+     "width": 1
+    },
+    "labels": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "normal"
+      }
+     }
+    },
+    "grid": {
+     "type": "esriSLS",
+     "style": "esriSLSSolid",
+     "width": 1
+    },
+    "guides": [],
+    "buffer": true
+   }
+  ],
+  "series": [
+   {
+    "type": "barSeries",
+    "id": "COUNT_OBJECTID_1",
+    "name": "groupByValues",
+    "x": "Risk_Level",
+    "dataLabels": {
+     "type": "chartText",
+     "visible": false,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "normal"
+      }
+     }
+    },
+    "dataTooltipVisible": true,
+    "dataTooltipReverseColor": true,
+    "y": "COUNT_OBJECTID_1",
+    "fillSymbol": {
+     "type": "esriSFS",
+     "style": "esriSFSSolid",
+     "color": [
+      214,
+      214,
+      214,
+      255
+     ],
+     "outline": {
+      "type": "esriSLS",
+      "style": "esriSLSSolid",
+      "color": [
+       214,
+       214,
+       214,
+       255
+      ],
+      "width": 1
+     }
+    }
+   }
+  ],
+  "legend": {
+   "type": "chartLegend",
+   "visible": false,
+   "body": {
+    "type": "esriTS",
+    "angle": 0,
+    "font": {
+     "family": "inherit",
+     "style": "normal",
+     "weight": "normal"
+    }
+   },
+   "position": "bottom"
+  },
+  "horizontalAxisLabelsBehavior": "hide",
+  "verticalAxisLabelsBehavior": "hide",
+  "rotated": true,
+  "cursorCrosshair": {
+   "type": "cursorCrosshair",
+   "verticalLineVisible": false,
+   "horizontalLineVisible": false
+  },
+  "stackedType": "sideBySide"
+ }
+}
+
+===== indicatorWidget 30518cf6-b40c-4992-b8ed-7988306f8340 =====
+{
+ "headerBackgroundColor": "#030303",
+ "id": "30518cf6-b40c-4992-b8ed-7988306f8340",
+ "name": "Indicator (1)",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "datasets": [
+  {
+   "type": "serviceDataset",
+   "name": "main",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "32d49a55d8354ecfb786307115591515",
+    "layerId": "19de4dbc8f1-layer-26"
+   },
+   "filter": {
+    "type": "filterGroup",
+    "condition": "OR",
+    "rules": [
+     {
+      "type": "filterGroup",
+      "condition": "AND",
+      "rules": [
+       {
+        "type": "filterRule",
+        "field": {
+         "name": "Risk_Level",
+         "type": "string"
+        },
+        "operator": "is_in",
+        "constraint": {
+         "type": "values",
+         "values": [
+          "خطر مرتفع جدًا - Very High Risk",
+          "خطر منخفض - Low Risk",
+          "خطر مرتفع - High Risk",
+          "خطر متوسط - Medium Risk"
+         ]
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "groupByFields": [],
+   "orderByFields": [],
+   "statisticDefinitions": [
+    {
+     "onStatisticField": "OBJECTID",
+     "statisticType": "count",
+     "outStatisticFieldName": "COUNT_OBJECTID"
+    }
+   ],
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  }
+ ],
+ "type": "indicatorWidget",
+ "defaultSettings": {
+  "backgroundColor": "#2b2b2b",
+  "topSection": {
+   "fontSize": 80,
+   "textInfo": {
+    "text": "Total Buildings at Risk",
+    "strokeColor": "#ffffff"
+   }
+  },
+  "middleSection": {
+   "fontSize": 160,
+   "textInfo": {
+    "text": "{calculated/value}",
+    "fillColor": "#d91414"
+   },
+   "iconInfo": {
+    "fillColor": "#d91414",
+    "strokeColor": "#121010",
+    "align": "left",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon \" role=\"button\" viewBox=\"0 0 16 16\"><path d=\"M7 5h1v6H7zm0 7h1v1H7z\"/><path d=\"M14.906 13.854L8.182 1.44a.774.774 0 0 0-1.364 0L.094 13.854A.777.777 0 0 0 .776 15h13.448a.775.775 0 0 0 .682-1.146zM1.152 14L7.5 2.281 13.848 14H1.152z\"/></svg>"
+   }
+  },
+  "bottomSection": {
+   "fontSize": 40,
+   "textInfo": {
+    "text": "إجمالي المباني المعرضة للخطر"
+   }
+  }
+ },
+ "comparison": "none",
+ "valueFormat": {
+  "name": "value",
+  "prefix": true,
+  "style": "decimal",
+  "useGrouping": true,
+  "maximumFractionDigits": 1
+ },
+ "percentageFormat": {
+  "name": "percentage",
+  "prefix": false,
+  "style": "percent",
+  "useGrouping": true
+ },
+ "ratioFormat": {
+  "name": "ratio",
+  "prefix": false,
+  "style": "decimal",
+  "useGrouping": true,
+  "maximumFractionDigits": 2
+ },
+ "valueType": "statistic",
+ "noValueState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ }
+}
+
+===== indicatorWidget 5928a54a-a08e-4831-82f4-9e3351885843 =====
+{
+ "id": "5928a54a-a08e-4831-82f4-9e3351885843",
+ "name": "Indicator (2)",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "datasets": [
+  {
+   "type": "serviceDataset",
+   "name": "main",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "32d49a55d8354ecfb786307115591515",
+    "layerId": "19de4db9506-layer-25"
+   },
+   "filter": {
+    "type": "filterGroup",
+    "condition": "OR",
+    "rules": [
+     {
+      "type": "filterGroup",
+      "condition": "AND",
+      "rules": [
+       {
+        "type": "filterRule",
+        "field": {
+         "name": "Risk_Level",
+         "type": "string"
+        },
+        "operator": "is_in",
+        "constraint": {
+         "type": "values",
+         "values": [
+          "خطر مرتفع جدًا - Very High Risk",
+          "خطر منخفض - Low Risk",
+          "خطر مرتفع - High Risk",
+          "خطر متوسط - Medium Risk"
+         ]
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "groupByFields": [],
+   "orderByFields": [],
+   "statisticDefinitions": [
+    {
+     "onStatisticField": "OBJECTID_1",
+     "statisticType": "count",
+     "outStatisticFieldName": "COUNT_OBJECTID_1"
+    }
+   ],
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  }
+ ],
+ "type": "indicatorWidget",
+ "defaultSettings": {
+  "topSection": {
+   "fontSize": 80,
+   "textInfo": {
+    "text": "Total Plots at Risk "
+   }
+  },
+  "middleSection": {
+   "fontSize": 160,
+   "textInfo": {
+    "text": "{calculated/value}",
+    "fillColor": "#d91414"
+   },
+   "iconInfo": {
+    "fillColor": "#d91414",
+    "strokeColor": "#000000",
+    "align": "left",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon \" role=\"button\" viewBox=\"0 0 16 16\"><path d=\"M7 5h1v6H7zm0 7h1v1H7z\"/><path d=\"M14.906 13.854L8.182 1.44a.774.774 0 0 0-1.364 0L.094 13.854A.777.777 0 0 0 .776 15h13.448a.775.775 0 0 0 .682-1.146zM1.152 14L7.5 2.281 13.848 14H1.152z\"/></svg>"
+   }
+  },
+  "bottomSection": {
+   "fontSize": 80,
+   "textInfo": {
+    "text": "إجمالي الأراضي المعرضة للخطر "
+   }
+  }
+ },
+ "comparison": "none",
+ "valueFormat": {
+  "name": "value",
+  "prefix": true,
+  "style": "decimal",
+  "useGrouping": true,
+  "maximumFractionDigits": 1
+ },
+ "percentageFormat": {
+  "name": "percentage",
+  "prefix": false,
+  "style": "percent",
+  "useGrouping": true
+ },
+ "ratioFormat": {
+  "name": "ratio",
+  "prefix": false,
+  "style": "decimal",
+  "useGrouping": true,
+  "maximumFractionDigits": 2
+ },
+ "valueType": "statistic",
+ "noValueState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ }
+}
+
+===== gaugeWidget 28d821ff-18fe-47ea-a5c7-d88e6d0699b8 =====
+{
+ "backgroundColor": "#2b2b2b",
+ "headerBackgroundColor": "#259c96",
+ "id": "28d821ff-18fe-47ea-a5c7-d88e6d0699b8",
+ "name": "Gauge (1)",
+ "title": "Safe Buildings - المباني الآمنة",
+ "topCaption": "",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "datasets": [
+  {
+   "type": "staticDataset",
+   "name": "min",
+   "data": 0
+  },
+  {
+   "type": "serviceDataset",
+   "name": "main",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "32d49a55d8354ecfb786307115591515",
+    "layerId": "19de4dbc8f1-layer-26"
+   },
+   "filter": {
+    "type": "filterGroup",
+    "condition": "OR",
+    "rules": [
+     {
+      "type": "filterGroup",
+      "condition": "AND",
+      "rules": [
+       {
+        "type": "filterRule",
+        "field": {
+         "name": "Risk_Level",
+         "type": "string"
+        },
+        "operator": "equal",
+        "constraint": {
+         "type": "value",
+         "value": "آمن - Safe"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "groupByFields": [],
+   "orderByFields": [],
+   "statisticDefinitions": [
+    {
+     "onStatisticField": "OBJECTID",
+     "statisticType": "count",
+     "outStatisticFieldName": "COUNT_OBJECTID"
+    }
+   ],
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  },
+  {
+   "type": "serviceDataset",
+   "name": "max",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "32d49a55d8354ecfb786307115591515",
+    "layerId": "19de4dbc8f1-layer-26"
+   },
+   "filter": {
+    "type": "filterGroup",
+    "condition": "OR",
+    "rules": [
+     {
+      "type": "filterGroup",
+      "condition": "AND",
+      "rules": [
+       {
+        "type": "filterRule",
+        "field": {
+         "name": "Risk_Level",
+         "type": "string"
+        },
+        "operator": "is_in",
+        "constraint": {
+         "type": "values",
+         "values": [
+          "خطر مرتفع جدًا - Very High Risk",
+          "خطر منخفض - Low Risk",
+          "خطر مرتفع - High Risk",
+          "خطر متوسط - Medium Risk"
+         ]
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "groupByFields": [],
+   "orderByFields": [],
+   "statisticDefinitions": [
+    {
+     "onStatisticField": "OBJECTID",
+     "statisticType": "count",
+     "outStatisticFieldName": "COUNT_OBJECTID"
+    }
+   ],
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  }
+ ],
+ "type": "gaugeWidget",
+ "chartConfig": {
+  "version": "25.0.0",
+  "type": "chart",
+  "orderOptions": {},
+  "subType": "statisticGauge",
+  "innerRadius": 75,
+  "startAngle": -210,
+  "endAngle": 30,
+  "axes": [
+   {
+    "type": "chartAxis",
+    "visible": true,
+    "title": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "bold"
+      }
+     }
+    },
+    "valueFormat": {
+     "type": "number",
+     "intlOptions": {
+      "style": "decimal",
+      "notation": "standard",
+      "minimumFractionDigits": 0,
+      "maximumFractionDigits": 1
+     }
+    },
+    "lineSymbol": {
+     "type": "esriSLS",
+     "style": "esriSLSSolid",
+     "width": 0
+    },
+    "labels": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "color": [
+       255,
+       255,
+       255,
+       255
+      ],
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "normal"
+      }
+     }
+    },
+    "guides": [
+     {
+      "type": "chartGuide",
+      "tooltipReverseColor": true,
+      "above": false,
+      "start": "0%",
+      "end": "100%",
+      "style": {
+       "type": "esriSFS",
+       "style": "esriSFSSolid",
+       "color": [
+        227,
+        20,
+        20,
+        255
+       ]
+      },
+      "name": "background",
+      "visible": true
+     },
+     {
+      "type": "chartGuide",
+      "tooltipReverseColor": true,
+      "above": false,
+      "start": "0%",
+      "style": {
+       "type": "esriSFS",
+       "style": "esriSFSSolid",
+       "color": [
+        29,
+        105,
+        51,
+        255
+       ]
+      },
+      "name": "value",
+      "visible": true
+     }
+    ],
+    "innerLabel": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "color": [
+       29,
+       105,
+       51,
+       255
+      ],
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "normal"
+      },
+      "verticalAlignment": "middle"
+     }
+    },
+    "needle": {
+     "type": "gaugeNeedle",
+     "visible": false,
+     "startWidth": 8,
+     "endWidth": 1,
+     "innerRadius": 0,
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid"
+     }
+    },
+    "ticks": {
+     "type": "gaugeAxisTick",
+     "visible": false
+    },
+    "onlyShowFirstAndLastLabels": true
+   }
+  ],
+  "series": [
+   {
+    "type": "gaugeSeries",
+    "id": "main",
+    "name": "main",
+    "x": "COUNT_OBJECTID",
+    "dataLabels": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "normal"
+      }
+     }
+    },
+    "dataTooltipVisible": true,
+    "dataTooltipReverseColor": true
+   }
+  ]
+ },
+ "valueType": "statistic",
+ "style": "progress",
+ "displayAsPercentage": false,
+ "valueFormat": {
+  "name": "value",
+  "prefix": false,
+  "style": "decimal",
+  "useGrouping": true,
+  "maximumFractionDigits": 1
+ },
+ "noValueState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "colorThresholds": [
+  {
+   "threshold": 0,
+   "color": "#ede1e1"
+  }
+ ]
+}
+
+===== tableWidget 453e2ef1-1117-4241-9e79-8ec36cad9eea =====
+{
+ "backgroundColor": "#2b2b2b",
+ "headerBackgroundColor": "#000000",
+ "id": "453e2ef1-1117-4241-9e79-8ec36cad9eea",
+ "name": "Table (1)",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "datasets": [
+  {
+   "type": "serviceDataset",
+   "name": "main",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "32d49a55d8354ecfb786307115591515",
+    "layerId": "19de4db9506-layer-25"
+   },
+   "filter": {
+    "type": "filterGroup",
+    "condition": "OR",
+    "rules": [
+     {
+      "type": "filterGroup",
+      "condition": "AND",
+      "rules": [
+       {
+        "type": "filterRule",
+        "field": {
+         "name": "Risk_Level",
+         "type": "string"
+        },
+        "operator": "is_in",
+        "constraint": {
+         "type": "values",
+         "values": [
+          "خطر مرتفع جدًا - Very High Risk",
+          "خطر مرتفع - High Risk"
+         ]
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "groupByFields": [],
+   "orderByFields": [
+    "Risk_Level ASC"
+   ],
+   "statisticDefinitions": [],
+   "maxFeatures": 100000,
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  }
+ ],
+ "type": "tableWidget",
+ "dataSettings": {
+  "type": "features",
+  "valueFields": [
+   "LANDUSE",
+   "Risk_Level"
+  ]
+ },
+ "tableSettings": {
+  "layout": "fit-columns",
+  "backgroundColor": "#2b2b2b",
+  "scale": "medium",
+  "hoverText": false,
+  "rowStriping": false,
+  "selectionColor": "#346a8a",
+  "selectionMode": "single",
+  "verticalGrid": {
+   "thickness": 1
+  },
+  "horizontalGrid": {
+   "thickness": 1
+  },
+  "headerSettings": {
+   "backgroundColor": "#259c96",
+   "rule": {
+    "color": "#259c96ff",
+    "thickness": 3
+   }
+  }
+ },
+ "columnSettings": [
+  {
+   "title": "LANDUSE",
+   "fieldName": "LANDUSE",
+   "textAlign": "left",
+   "isBold": false,
+   "isItalic": false,
+   "isUnderlined": false
+  },
+  {
+   "title": "Risk Level (Very High + High )",
+   "fieldName": "Risk_Level",
+   "textAlign": "left",
+   "isBold": false,
+   "isItalic": false,
+   "isUnderlined": false
+  }
+ ],
+ "editingEnabled": false,
+ "editColumnPlacement": "end"
+}
+
+===== gaugeWidget d3a5025d-f8c5-4c35-9df8-0a5152dc3a91 =====
+{
+ "headerBackgroundColor": "#259c96",
+ "id": "d3a5025d-f8c5-4c35-9df8-0a5152dc3a91",
+ "name": "Gauge (2)",
+ "title": "Safe Plots - الأراضي الآمنة ",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "datasets": [
+  {
+   "type": "staticDataset",
+   "name": "min",
+   "data": 0
+  },
+  {
+   "type": "serviceDataset",
+   "name": "main",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "32d49a55d8354ecfb786307115591515",
+    "layerId": "19de4db9506-layer-25"
+   },
+   "filter": {
+    "type": "filterGroup",
+    "condition": "OR",
+    "rules": [
+     {
+      "type": "filterGroup",
+      "condition": "AND",
+      "rules": [
+       {
+        "type": "filterRule",
+        "field": {
+         "name": "Risk_Level",
+         "type": "string"
+        },
+        "operator": "equal",
+        "constraint": {
+         "type": "value",
+         "value": "آمن - Safe"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "groupByFields": [],
+   "orderByFields": [],
+   "statisticDefinitions": [
+    {
+     "onStatisticField": "OBJECTID_1",
+     "statisticType": "count",
+     "outStatisticFieldName": "COUNT_OBJECTID_1"
+    }
+   ],
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  },
+  {
+   "type": "serviceDataset",
+   "name": "max",
+   "dataSource": {
+    "type": "layerDataSource",
+    "itemId": "32d49a55d8354ecfb786307115591515",
+    "layerId": "19de4db9506-layer-25"
+   },
+   "filter": {
+    "type": "filterGroup",
+    "condition": "OR",
+    "rules": [
+     {
+      "type": "filterGroup",
+      "condition": "AND",
+      "rules": [
+       {
+        "type": "filterRule",
+        "field": {
+         "name": "Risk_Level",
+         "type": "string"
+        },
+        "operator": "is_in",
+        "constraint": {
+         "type": "values",
+         "values": [
+          "خطر مرتفع جدًا - Very High Risk",
+          "خطر منخفض - Low Risk",
+          "خطر مرتفع - High Risk",
+          "خطر متوسط - Medium Risk"
+         ]
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "groupByFields": [],
+   "orderByFields": [],
+   "statisticDefinitions": [
+    {
+     "onStatisticField": "OBJECTID_1",
+     "statisticType": "count",
+     "outStatisticFieldName": "COUNT_OBJECTID_1"
+    }
+   ],
+   "outFields": [
+    "*"
+   ],
+   "returnDistinctValues": false,
+   "allowSourceDownload": false,
+   "allowSummaryDownload": false
+  }
+ ],
+ "type": "gaugeWidget",
+ "chartConfig": {
+  "version": "25.0.0",
+  "type": "chart",
+  "orderOptions": {},
+  "subType": "statisticGauge",
+  "innerRadius": 75,
+  "startAngle": -210,
+  "endAngle": 30,
+  "axes": [
+   {
+    "type": "chartAxis",
+    "visible": true,
+    "title": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "bold"
+      }
+     }
+    },
+    "valueFormat": {
+     "type": "number",
+     "intlOptions": {
+      "style": "decimal",
+      "notation": "standard",
+      "minimumFractionDigits": 0,
+      "maximumFractionDigits": 1
+     }
+    },
+    "lineSymbol": {
+     "type": "esriSLS",
+     "style": "esriSLSSolid",
+     "width": 0
+    },
+    "labels": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "normal"
+      }
+     }
+    },
+    "guides": [
+     {
+      "type": "chartGuide",
+      "tooltipReverseColor": true,
+      "above": false,
+      "start": "0%",
+      "end": "100%",
+      "style": {
+       "type": "esriSFS",
+       "style": "esriSFSSolid",
+       "color": [
+        227,
+        20,
+        20,
+        255
+       ]
+      },
+      "name": "background",
+      "visible": true
+     },
+     {
+      "type": "chartGuide",
+      "tooltipReverseColor": true,
+      "above": false,
+      "start": "0%",
+      "style": {
+       "type": "esriSFS",
+       "style": "esriSFSSolid",
+       "color": [
+        29,
+        105,
+        51,
+        255
+       ]
+      },
+      "name": "value",
+      "visible": true
+     }
+    ],
+    "innerLabel": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "color": [
+       29,
+       105,
+       51,
+       255
+      ],
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "normal"
+      },
+      "verticalAlignment": "middle"
+     }
+    },
+    "needle": {
+     "type": "gaugeNeedle",
+     "visible": false,
+     "startWidth": 8,
+     "endWidth": 1,
+     "innerRadius": 0,
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid"
+     }
+    },
+    "ticks": {
+     "type": "gaugeAxisTick",
+     "visible": false
+    },
+    "onlyShowFirstAndLastLabels": true
+   }
+  ],
+  "series": [
+   {
+    "type": "gaugeSeries",
+    "id": "main",
+    "name": "main",
+    "x": "COUNT_OBJECTID_1",
+    "dataLabels": {
+     "type": "chartText",
+     "visible": true,
+     "content": {
+      "type": "esriTS",
+      "angle": 0,
+      "font": {
+       "family": "inherit",
+       "style": "normal",
+       "weight": "normal"
+      }
+     }
+    },
+    "dataTooltipVisible": true,
+    "dataTooltipReverseColor": true
+   }
+  ]
+ },
+ "valueType": "statistic",
+ "style": "progress",
+ "displayAsPercentage": false,
+ "valueFormat": {
+  "name": "value",
+  "prefix": true,
+  "style": "decimal",
+  "useGrouping": true,
+  "maximumFractionDigits": 1
+ },
+ "noValueState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "colorThresholds": []
+}
+
+===== richTextWidget b29d5181-b98d-4535-9d3c-e615a3aab32f =====
+{
+ "backgroundColor": "#2b2b2b",
+ "id": "b29d5181-b98d-4535-9d3c-e615a3aab32f",
+ "name": "Rich text (1)",
+ "showLastUpdate": false,
+ "noDataState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "noFilterState": {
+  "verticalAlignment": "middle",
+  "showTopCaption": true,
+  "showBottomCaption": true
+ },
+ "type": "richTextWidget",
+ "text": "<p><span style=\"background-color:#e60000;color:#ffffff;\"><strong>⚠️ Important Notes:</strong></span></p><p><br><span style=\"color:#ffffff;\">- Flood risk classification is model-based.</span><br><span style=\"color:#ffffff;\">- High and Very High areas require priority attention.</span><br><span style=\"color:#ffffff;\">- Always validate results with ground surveys before action planning.</span></p><p>&nbsp;</p><p><span style=\"background-color:#e60000;color:#ffffff;\"><strong>⚠️ ملاحظات مهمة:</strong></span></p><p>&nbsp;</p><p><span style=\"color:#ffffff;\"><span>- التصنيف يعتمد على نموذج تحليل مخاطر الفيضانات</span></span><br><span style=\"color:#ffffff;\"><span>- المناطق عالية الخطورة تحتاج تدخل سريع</span></span><br><span style=\"color:#ffffff;\"><span>- يُفضل التحقق الميداني قبل التنفيذ</span></span></p>"
+}
+
